@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>贺坤的个人博客</title>
+  
+  <subtitle>Simple is better than complex!</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://github.com/hekun97/hekun97.github.io/"/>
+  <updated>2020-07-12T09:15:26.881Z</updated>
+  <id>https://github.com/hekun97/hekun97.github.io/</id>
+  
+  <author>
+    <name>贺坤</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第三周</title>
+    <link href="https://github.com/hekun97/hekun97.github.io/2020/07/12/di-san-zhou/"/>
+    <id>https://github.com/hekun97/hekun97.github.io/2020/07/12/di-san-zhou/</id>
+    <published>2020-07-12T09:15:26.881Z</published>
+    <updated>2020-07-12T09:15:26.881Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;第三周-基本数据类型&quot;&gt;&lt;a href=&quot;#第三周-基本数据类型&quot; class=&quot;headerlink&quot; title=&quot;第三周 基本数据类型&quot;&gt;&lt;/a&gt;第三周 基本数据类型&lt;/h1&gt;&lt;h2 id=&quot;本课概要&quot;&gt;&lt;a href=&quot;#本课概要&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>面向对象基础</title>
+    <link href="https://github.com/hekun97/hekun97.github.io/2020/07/12/mian-xiang-dui-xiang-ji-chu/"/>
+    <id>https://github.com/hekun97/hekun97.github.io/2020/07/12/mian-xiang-dui-xiang-ji-chu/</id>
+    <published>2020-07-12T09:15:26.881Z</published>
+    <updated>2020-07-12T09:15:26.881Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;面向对象基础&quot;&gt;&lt;a href=&quot;#面向对象基础&quot; class=&quot;headerlink&quot; title=&quot;面向对象基础&quot;&gt;&lt;/a&gt;面向对象基础&lt;/h1&gt;&lt;h2 id=&quot;方法&quot;&gt;&lt;a href=&quot;#方法&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>常用函数</title>
+    <link href="https://github.com/hekun97/hekun97.github.io/2020/07/12/chang-yong-han-shu/"/>
+    <id>https://github.com/hekun97/hekun97.github.io/2020/07/12/chang-yong-han-shu/</id>
+    <published>2020-07-12T09:15:26.880Z</published>
+    <updated>2020-07-12T09:15:26.880Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Python常用函数&quot;&gt;&lt;a href=&quot;#Python常用函数&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>电脑为手机分享热点</title>
+    <link href="https://github.com/hekun97/hekun97.github.io/2020/07/12/dian-nao-wei-shou-ji-fen-xiang-re-dian/"/>
+    <id>https://github.com/hekun97/hekun97.github.io/2020/07/12/dian-nao-wei-shou-ji-fen-xiang-re-dian/</id>
+    <published>2020-07-12T09:15:26.880Z</published>
+    <updated>2020-07-12T09:15:26.880Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;SSR Windows客户端 共享给局域网手机教程&lt;br&gt;jimait 2019年8月24日 Shadowsocks, 穿山越岭 4,385&lt;/p&gt;
+&lt;p&gt;SSR Windows客户端 共享给局域网手机教程&lt;/p&gt;
+&lt;p&gt;SSR
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SQL语句汇总（终篇）—— 表联接与联接查询</title>
+    <link href="https://github.com/hekun97/hekun97.github.io/2020/07/12/sql-yu-ju-hui-zong-zhong-pian-biao-lian-jie-yu-lian-jie-cha-xun/"/>
+    <id>https://github.com/hekun97/hekun97.github.io/2020/07/12/sql-yu-ju-hui-zong-zhong-pian-biao-lian-jie-yu-lian-jie-cha-xun/</id>
+    <published>2020-07-12T09:15:26.879Z</published>
+    <updated>2020-07-12T09:15:26.879Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SQL语句汇总（终篇）——-表联接与联接查询&quot;&gt;&lt;a href=&quot;#SQL语句汇总（终篇）——-表联接与联接查询&quot; class=&quot;headerlink&quot; title=&quot;SQL语句汇总（终篇）—— 表联接与联接查询&quot;&gt;&lt;/a&gt;SQL语句汇总（终篇）——
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SQL语句汇总（二）——数据修改、数据查询</title>
+    <link href="https://github.com/hekun97/hekun97.github.io/2020/07/12/sql-yu-ju-hui-zong-er-shu-ju-xiu-gai-shu-ju-cha-xun/"/>
+    <id>https://github.com/hekun97/hekun97.github.io/2020/07/12/sql-yu-ju-hui-zong-er-shu-ju-xiu-gai-shu-ju-cha-xun/</id>
+    <published>2020-07-12T09:15:26.878Z</published>
+    <updated>2020-07-12T09:15:26.878Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SQL语句汇总（二）——数据修改、数据查询&quot;&gt;&lt;a href=&quot;#SQL语句汇总（二）——数据修改、数据查询&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SQL语句汇总（一）——数据库与表的操作以及创建约束</title>
+    <link href="https://github.com/hekun97/hekun97.github.io/2020/07/12/sql-yu-ju-hui-zong-yi-shu-ju-ku-yu-biao-de-cao-zuo-yi-ji-chuang-jian-yue-shu/"/>
+    <id>https://github.com/hekun97/hekun97.github.io/2020/07/12/sql-yu-ju-hui-zong-yi-shu-ju-ku-yu-biao-de-cao-zuo-yi-ji-chuang-jian-yue-shu/</id>
+    <published>2020-07-12T09:15:26.877Z</published>
+    <updated>2020-07-12T09:15:26.877Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SQL语句汇总（一）——数据库与表的操作以及创建约束&quot;&gt;&lt;a href=&quot;#SQL语句汇总（一）——数据库与表的操作以及创建约束&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SQL语句汇总（三）——聚合函数、分组、子查询及组合查询</title>
+    <link href="https://github.com/hekun97/hekun97.github.io/2020/07/12/sql-yu-ju-hui-zong-san-ju-he-han-shu-fen-zu-zi-cha-xun-ji-zu-he-cha-xun/"/>
+    <id>https://github.com/hekun97/hekun97.github.io/2020/07/12/sql-yu-ju-hui-zong-san-ju-he-han-shu-fen-zu-zi-cha-xun-ji-zu-he-cha-xun/</id>
+    <published>2020-07-12T09:15:26.877Z</published>
+    <updated>2020-07-12T09:15:26.878Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SQL语句汇总（三）——聚合函数、分组、子查询及组合查询&quot;&gt;&lt;a href=&quot;#SQL语句汇总（三）——聚合函数、分组、子查询及组合查询&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python第二周学习心得</title>
+    <link href="https://github.com/hekun97/hekun97.github.io/2020/02/28/python-di-er-zhou-xue-xi-xin-de/"/>
+    <id>https://github.com/hekun97/hekun97.github.io/2020/02/28/python-di-er-zhou-xue-xi-xin-de/</id>
+    <published>2020-02-28T02:20:40.000Z</published>
+    <updated>2020-07-12T09:15:26.877Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;turtle-库&quot;&gt;&lt;a href=&quot;#turtle-库&quot; class=&quot;headerlink&quot; title=&quot;turtle 库&quot;&gt;&lt;/a&gt;turtle 库&lt;/h1&gt;&lt;h2 id=&quot;turtle-库的使用&quot;&gt;&lt;a href=&quot;#turtle-库的使用&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习心得" scheme="https://github.com/hekun97/hekun97.github.io/categories/%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
+    
+      <category term="海龟库" scheme="https://github.com/hekun97/hekun97.github.io/categories/%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/%E6%B5%B7%E9%BE%9F%E5%BA%93/"/>
+    
+    
+      <category term="Python" scheme="https://github.com/hekun97/hekun97.github.io/tags/Python/"/>
+    
+      <category term="turtle" scheme="https://github.com/hekun97/hekun97.github.io/tags/turtle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>程序设计基本方法</title>
+    <link href="https://github.com/hekun97/hekun97.github.io/2020/02/19/cheng-xu-she-ji-ji-ben-fang-fa/"/>
+    <id>https://github.com/hekun97/hekun97.github.io/2020/02/19/cheng-xu-she-ji-ji-ben-fang-fa/</id>
+    <published>2020-02-18T17:28:40.000Z</published>
+    <updated>2020-07-12T09:15:26.881Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;程序设计的基本方法&quot;&gt;&lt;a href=&quot;#程序设计的基本方法&quot; class=&quot;headerlink&quot; title=&quot;程序设计的基本方法&quot;&gt;&lt;/a&gt;程序设计的基本方法&lt;/h1&gt;&lt;h2 id=&quot;程序的基本编写方法&quot;&gt;&lt;a href=&quot;#程序的基本编写方法&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程方法" scheme="https://github.com/hekun97/hekun97.github.io/categories/%E7%BC%96%E7%A8%8B%E6%96%B9%E6%B3%95/"/>
+    
+    
+      <category term="Python" scheme="https://github.com/hekun97/hekun97.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用hexo搭建自己的个人博客（一）</title>
+    <link href="https://github.com/hekun97/hekun97.github.io/2020/02/16/shi-yong-hexo-da-jian-zi-ji-de-ge-ren-bo-ke-yi/"/>
+    <id>https://github.com/hekun97/hekun97.github.io/2020/02/16/shi-yong-hexo-da-jian-zi-ji-de-ge-ren-bo-ke-yi/</id>
+    <published>2020-02-16T09:45:19.000Z</published>
+    <updated>2020-07-12T09:15:26.880Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;花了几天用 hexo 搭建了我的个人博客，点击链接可以访问，欢迎来访： &lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="hexo搭建博客" scheme="https://github.com/hekun97/hekun97.github.io/categories/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="hexo" scheme="https://github.com/hekun97/hekun97.github.io/tags/hexo/"/>
+    
+      <category term="GitHub" scheme="https://github.com/hekun97/hekun97.github.io/tags/GitHub/"/>
+    
+      <category term="Coding" scheme="https://github.com/hekun97/hekun97.github.io/tags/Coding/"/>
+    
+  </entry>
+  
+</feed>

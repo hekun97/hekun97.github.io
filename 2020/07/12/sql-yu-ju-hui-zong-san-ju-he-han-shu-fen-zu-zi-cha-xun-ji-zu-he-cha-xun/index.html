@@ -1,0 +1,1402 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="SQL语句汇总（三）——聚合函数、分组、子查询及组合查询, 贺坤的个人博客">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>SQL语句汇总（三）——聚合函数、分组、子查询及组合查询 | 贺坤的个人博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="贺坤的个人博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">贺坤的个人博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">贺坤的个人博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/hekun97" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/hekun97" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">SQL语句汇总（三）——聚合函数、分组、子查询及组合查询</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-07-12
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-07-12
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    8 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="SQL语句汇总（三）——聚合函数、分组、子查询及组合查询"><a href="#SQL语句汇总（三）——聚合函数、分组、子查询及组合查询" class="headerlink" title="SQL语句汇总（三）——聚合函数、分组、子查询及组合查询"></a>SQL语句汇总（三）——聚合函数、分组、子查询及组合查询</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>终于开始写第三篇了。走起！</p>
+<h2 id="聚合函数："><a href="#聚合函数：" class="headerlink" title="聚合函数："></a>聚合函数：</h2><p><code>SQL</code>中提供的聚合函数可以用来统计、求和、求最值等等。</p>
+<p>分类：</p>
+<ul>
+<li><p><code>COUNT</code>：统计行数量</p>
+</li>
+<li><p><code>SUM</code>：获取单个列的合计值</p>
+</li>
+<li><p><code>AVG</code>：计算某个列的平均值</p>
+</li>
+<li><p><code>MAX</code>：计算列的最大值</p>
+</li>
+<li><p><code>MIN</code>：计算列的最小值</p>
+</li>
+</ul>
+<p>首先，创建数据表如下：</p>
+<p><img src="https://pic.downk.cc/item/5e858f04504f4bcb04d5769e.jpg" alt=""></p>
+<h3 id="执行列、行计数（count）："><a href="#执行列、行计数（count）：" class="headerlink" title="执行列、行计数（count）："></a>执行列、行计数（count）：</h3><p>标准格式</p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT
+  COUNT(< 计数规范 >)
+FROM < 表名 ></code></pre>
+<p>其中，计数规范包括：</p>
+<ul>
+<li><p><code>*</code>:计数所有选择的行，包括NULL值；</p>
+</li>
+<li><p><code>ALL</code>列名：计数指定列的所有非空值行，如果不写，默认为<code>ALL</code>；</p>
+</li>
+<li><p><code>DISTINCT</code> 列名：计数指定列的唯一非空值行。</p>
+</li>
+</ul>
+<p><strong>例，计算班里共有多少学生：</strong></p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT
+  COUNT(*)
+FROM t_student;</code></pre>
+<p><img src="https://pic.downk.cc/item/5e858f75504f4bcb04d5bfd2.jpg" alt=""></p>
+<p><strong>也可加入筛选条件，如求女学生数目：</strong></p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT
+  COUNT(*)
+FROM t_student
+WHERE
+  student_sex = '女';</code></pre>
+<p><img src="https://pic.downk.cc/item/5e858fba504f4bcb04d5f5c2.jpg" alt=""></p>
+<p><strong>如果要计算班级数目，就需要用到<code>DISTINCT</code>：</strong></p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT
+  COUNT(DISTINCT student_class)
+FROM t_student;</code></pre>
+<p><img src="https://pic.downk.cc/item/5e858ffe504f4bcb04d637e9.jpg" alt=""></p>
+<p><code>DISTINCT</code>即去重，如果不加<code>DISTINCT</code>则结果为表行数——5。</p>
+<h3 id="返回列合计值（SUM）："><a href="#返回列合计值（SUM）：" class="headerlink" title="返回列合计值（SUM）："></a>返回列合计值（SUM）：</h3><p><font color="red">注：<code>sum</code>只有<code>ALL</code>与<code>DISTINCT</code>两种计数规范，无<code>*</code>。</font></p>
+<p><strong>计算学生年龄之和：</strong></p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT
+  SUM(student_age)
+FROM t_student;</code></pre>
+<p><img src="https://pic.downk.cc/item/5e8591b6504f4bcb04d765aa.jpg" alt=""></p>
+<h3 id="返回列平均值（AVG）："><a href="#返回列平均值（AVG）：" class="headerlink" title="返回列平均值（AVG）："></a>返回列平均值（AVG）：</h3><p><strong>计算学生平均年龄：</strong></p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT
+  AVG(student_age)
+FROM t_student;</code></pre>
+<p><img src="https://pic.downk.cc/item/5e8591db504f4bcb04d782a2.jpg" alt=""></p>
+<h3 id="返回最大值-最小值（MAX-MIN）："><a href="#返回最大值-最小值（MAX-MIN）：" class="headerlink" title="返回最大值/最小值（MAX/MIN）："></a>返回最大值/最小值（MAX/MIN）：</h3><p><strong>求年龄最大的学生信息（最小值同理）：</strong></p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT
+  MAX(student_age)
+FROM t_student;</code></pre>
+<p><img src="https://pic.downk.cc/item/5e8591f9504f4bcb04d797a4.jpg" alt=""></p>
+<p><font color="red">注：这里只能求出最大年龄，要想显示年龄最大的学生全部信息，需要用到之后的子查询。</font></p>
+<h2 id="数据分组（GROUP-BY-："><a href="#数据分组（GROUP-BY-：" class="headerlink" title="数据分组（GROUP BY)："></a>数据分组（GROUP BY)：</h2><p><code>SQL</code>中数据可以按列名分组，搭配聚合函数十分实用。</p>
+<p>例，统计每个班的人数:</p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT
+  student_class,
+  COUNT(ALL student_name) AS 总人数
+FROM t_student
+GROUP BY
+  (student_class);</code></pre>
+<p><code>AS</code>为定义别名，别名的使用在组合及联接查询时会有很好的效果，之后再说。</p>
+<p><img src="https://pic.downk.cc/item/5e85922e504f4bcb04d7bdd7.jpg" alt=""></p>
+<p>分组中也可以加入筛选条件<code>WHERE</code>，不过这里一定要注意的是，执行顺序为：</p>
+<ol>
+<li><code>WHERE</code>过滤</li>
+<li>分组</li>
+<li>聚合函数。</li>
+</ol>
+<p><font color="red">牢记！</font></p>
+<p><strong>统计每个班上20岁以上的学生人数：</strong></p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT
+  student_class,
+  COUNT(student_name) AS 总人数
+FROM t_student
+WHERE
+  student_age > 20
+GROUP BY
+  (student_class);</code></pre>
+<p><img src="https://pic.downk.cc/item/5e859258504f4bcb04d7de5a.jpg" alt=""></p>
+<h3 id="HAVING过滤条件："><a href="#HAVING过滤条件：" class="headerlink" title="HAVING过滤条件："></a>HAVING过滤条件：</h3><p>之前说了分组操作、聚合函数、<code>WHERE</code>过滤的执行顺序，那如果我们希望在聚合之后执行过滤条件怎么办？</p>
+<p>例，我们想查询平均年龄在20岁以上的班级</p>
+<p>能用下面的语句吗？</p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT
+  student_class,
+  AVG(student_age)
+FROM t_student
+WHERE
+  AVG(student_age) > 20
+GROUP BY
+  student_class;</code></pre>
+<p>结果会出错。正因为聚合函数在<code>WHERE</code>之后执行，所以这里在<code>WHERE</code>判断条件里加入聚合函数是做不到的。</p>
+<p>这里使用<code>HAIVING</code>即可完成：</p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT
+  student_class,
+  AVG(student_age) AS 平均年龄
+FROM t_student
+GROUP BY
+  (student_class)
+HAVING
+  AVG(student_age) > 20;</code></pre>
+<p><img src="https://pic.downk.cc/item/5e859290504f4bcb04d808b0.jpg" alt=""></p>
+<p>这里再啰嗦一句</p>
+<p><strong><code>SQL</code>的执行顺序：</strong></p>
+<ul>
+<li><p>第一步：执行<code>FROM</code></p>
+</li>
+<li><p>第二步：<code>WHERE</code>条件过滤</p>
+</li>
+<li><p>第三步：<code>GROUP BY</code>分组</p>
+</li>
+<li><p>第四步：执行<code>SELECT</code>投影列</p>
+</li>
+<li><p>第五步：<code>HAVING</code>条件过滤</p>
+</li>
+<li><p>第六步：执行<code>ORDER BY</code> 排序</p>
+</li>
+</ul>
+<h2 id="子查询："><a href="#子查询：" class="headerlink" title="子查询："></a>子查询：</h2><p>为什么要子查询？</p>
+<p>现有一数据表如下：</p>
+<p><img src="https://pic.downk.cc/item/5e8592b7504f4bcb04d825d3.jpg" alt=""><br>根据之前的知识我们可以查出每门科目的最高分，但是要想查出取得最高分的学生信息就做不到了。这时就需要用到子查询来取得完整的信息。</p>
+<p>什么是子查询？子查询就是嵌套在主查询中的查询。</p>
+<p>子查询可以嵌套在主查询中所有位置，包括<code>SELECT</code>、<code>FROM</code>、<code>WHERE</code>、<code>GROUP BY</code>、<code>HAVING</code>、<code>ORDER BY</code>。</p>
+<p>但并不是每个位置嵌套子查询都是有意义并实用的，这里对几种有实际意义的子查询进行说明。</p>
+<p>现有表两张：一张学生表、一张班表。<code>id</code>相关联</p>
+<p><img src="https://pic.downk.cc/item/5e8592df504f4bcb04d84202.jpg" alt=""></p>
+<p><img src="https://pic.downk.cc/item/5e8592eb504f4bcb04d84c01.jpg" alt=""></p>
+<h3 id="在SELECT中嵌套："><a href="#在SELECT中嵌套：" class="headerlink" title="在SELECT中嵌套："></a>在SELECT中嵌套：</h3><p>学生信息和班级名称位于不同的表中，要在同一张表中查出学生的学号、姓名、班级名称：</p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT
+  s.student_id,
+  s.student_name,(
+    SELECT
+      class_name
+    FROM t_class c
+    WHERE
+      c.class_id = s.class_id
+  )
+FROM t_student s
+GROUP BY
+  s.student_id;</code></pre>
+<p>首先这条<code>SQL</code>语句用到了别名，写法为在<code>FORM</code>的表名后加上某个字符比如<code>FROM t_student s，</code>这样在之后调用<code>t_student</code>的某一列时就可以用<code>s.student_id来</code>强调此列来源于对应别名的那张表。</p>
+<p>别名在子查询及联接查询中的应用有着很好效果，当两张表有相同列名或者为了加强可读性，给表加上不同的别名，就能很好的区分哪些列属于哪张表。</p>
+<p>还有种情况就是在子查询或联接查询时，主查询及子查询均为对同一张表进行操作，为主、子查询中的表加上不同的别名能够很好的区分哪些列的操作是在主查询中进行的，哪些列的操作是在子查询中进行的，下文会有实例说明。</p>
+<p>接下来回到上面的<code>SQL</code>语句中，可以看出本条子查询的嵌套是在<code>SELECT</code>位置（括号括起来的部分），它与学号、学生姓名以逗号分隔开并列在<code>SELECT</code>位置，也就是说它是我们想要查出的一列，</p>
+<p>子查询中查出的是，班级表中的班级<code>id</code>与学生表中的班级<code>id</code>相同的行，注意 <code>WHERE c.class_id=s.class_id</code>这里就是别名用法的一个很好的体现，区分开了两张表中同样列名的列。</p>
+<p>结果：</p>
+<p><img src="https://pic.downk.cc/item/5e859338504f4bcb04d88208.jpg" alt=""><br>最后的<code>GROUP BY</code>可以理解为对重复行的去重，如果不加：</p>
+<p><img src="https://pic.downk.cc/item/5e859345504f4bcb04d88abb.jpg" alt=""></p>
+<h3 id="在WHERE中嵌套："><a href="#在WHERE中嵌套：" class="headerlink" title="在WHERE中嵌套："></a>在WHERE中嵌套：</h3><p>现要查出C语言成绩最高的学生的信息：</p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT
+  *
+FROM t_student
+WHERE
+  student_subject = 'C语言'
+  AND student_score >= ALL (
+    SELECT
+      student_score
+    FROM t_student
+    WHERE
+      student_subject = 'C语言'
+  );</code></pre>
+<p>结果：</p>
+<p><img src="https://pic.downk.cc/item/5e85936a504f4bcb04d8a527.jpg" alt=""><br>这里出现了一个<code>ALL</code>，其为子查询运算符</p>
+<p>分类：</p>
+<ul>
+<li><p><code>ALL</code>运算符<br>和子查询的结果逐一比较，必须全部满足时表达式的值才为真。</p>
+</li>
+<li><p><code>ANY</code>运算符<br>和子查询的结果逐一比较，其中一条记录满足条件则表达式的值就为真。</p>
+</li>
+<li><p><code>EXISTS/NOT EXISTS</code>运算符<br><code>EXISTS</code>判断子查询是否存在数据，如果存在则表达式为真，反之为假。<code>NOT EXISTS</code>相反。</p>
+</li>
+</ul>
+<p>在子查询或相关查询中，要求出某个列的最大值，通常都是用<code>ALL</code>来比较，大意为比其他行都要大的值即为最大值。</p>
+<p>要查出C语言成绩比李四高的学生的信息：</p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT
+  *
+FROM t_student
+WHERE
+  student_subject = 'C语言'
+  AND student_score >(
+    SELECT
+      student_score
+    FROM t_student
+    WHERE
+      student_name = '李四'
+      AND student_subject = 'C语言'
+  );</code></pre>
+<p><img src="https://pic.downk.cc/item/5e8593dd504f4bcb04d8f4ac.jpg" alt=""></p>
+<p>通过上面两例，应该可以明白子查询在<code>WHERE</code>中嵌套的作用。通过子查询中返回的列值来作为比较对象，在<code>WHERE</code>中运用不同的比较运算符来对其进行比较，从而得到结果。</p>
+<p>现在我们回到最开始的问题，怎么查出每门课最高成绩的学生的信息：</p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT
+  *
+FROM t_student s1
+WHERE
+  s1.student_score >= ALL(
+    SELECT
+      s2.student_score
+    FROM t_student s2
+    WHERE
+      s1.student_subject = s2.student_subject
+  );</code></pre>
+<p>这里就是上文提到的别名的第二种用法，主、子查询对同一张表操作，区分开位于内外表中相同的列名。</p>
+<p>结果：</p>
+<p><img src="https://pic.downk.cc/item/5e8593f4504f4bcb04d90360.jpg" alt=""></p>
+<h3 id="子查询的分类："><a href="#子查询的分类：" class="headerlink" title="子查询的分类："></a>子查询的分类：</h3><ul>
+<li><p>相关子查询</p>
+<ul>
+<li>执行依赖于外部查询的数据。</li>
+<li>外部查询返回一行，子查询就执行一次。</li>
+</ul>
+</li>
+<li><p>非相关子查询</p>
+<ul>
+<li>独立于外部查询的子查询。</li>
+<li>子查询总共执行一次，执行完毕后后将值传递给外部查询。</li>
+</ul>
+</li>
+</ul>
+<p>上文提到的例子中，第一个例子求学生对应班级名的即为相关子查询，其中<code>WHERE c.class_id=s.class_id</code>即为相关条件。其他的例子均只对一张表进行操作，为非相关子查询。</p>
+<p>需要注意的是相关子查询主查询执行一回，子查询就执行一回，十分耗费时间，尤其是当数据多的时候。</p>
+<h2 id="组合查询："><a href="#组合查询：" class="headerlink" title="组合查询："></a>组合查询：</h2><p>通过<code>UNION</code>运算符来将两张表纵向联接，基本方式为：</p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT
+  列1,
+  列2
+FROM 表1
+UNION
+SELECT
+  列3,
+  列4
+FROM 表2;
+</code></pre>
+<p><code>UNION ALL</code>为保留重复行：</p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT
+  列1,
+  列2
+FROM 表1
+UNION ALL
+SELECT
+  列3,
+  列4
+FROM 表2;</code></pre>
+<p>组合查询并不是太实用，所以这里只是简单提一下，不举出例子了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>上文说过相关子查询不推荐使用，组合查询又用的少之又少，那需要关联的多张表我们怎么做？</p>
+<p>这就是下一篇博文要详细说明的<code>SQL</code>的重点表联接、联接查询。而此篇博文目的是为了对嵌套查询、别名的用法等等打下基础，毕竟只是写法变了，思路还是相似的。</p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/hekun97/hekun97.github.io" rel="external nofollow noreferrer">贺坤</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/hekun97/hekun97.github.io/2020/07/12/sql-yu-ju-hui-zong-san-ju-he-han-shu-fen-zu-zi-cha-xun-ji-zu-he-cha-xun/">https://github.com/hekun97/hekun97.github.io/2020/07/12/sql-yu-ju-hui-zong-san-ju-he-han-shu-fen-zu-zi-cha-xun-ji-zu-he-cha-xun/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://github.com/hekun97/hekun97.github.io" target="_blank">贺坤</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/07/12/sql-yu-ju-hui-zong-yi-shu-ju-ku-yu-biao-de-cao-zuo-yi-ji-chuang-jian-yue-shu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="SQL语句汇总（一）——数据库与表的操作以及创建约束">
+                        
+                        <span class="card-title">SQL语句汇总（一）——数据库与表的操作以及创建约束</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            SQL语句汇总（一）——数据库与表的操作以及创建约束前言此文旨在汇总从建立数据库到联接查询等绝大部分SQL语句。SQL语句虽不能说很多，但稍有时间不写就容易出错。博主希望通过此文来战胜自己的健忘。
+SQL是 Structured Query
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-12
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            贺坤
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/02/28/python-di-er-zhou-xue-xi-xin-de/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Python第二周学习心得">
+                        
+                        <span class="card-title">Python第二周学习心得</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            turtle 库turtle 库的使用turtle简介turtle(海龟)库是turtle绘图体系的Python实现
+
+是Python语言的 标准库之一
+是一个入门级的图形绘制函数库
+
+什么是标准库？Python计算生态=标准库+第三方库
+
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/" class="post-category">
+                                    学习心得
+                                </a>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/%E6%B5%B7%E9%BE%9F%E5%BA%93/" class="post-category">
+                                    海龟库
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/turtle/">
+                        <span class="chip bg-color">turtle</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='none'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="https://github.com/hekun97/hekun97.github.io" target="_blank">贺坤</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">14k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/hekun97" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:hek97@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=347066623" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 347066623" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
