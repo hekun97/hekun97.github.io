@@ -503,7 +503,7 @@
 </li>
 </ul>
 <p>首先，创建数据表如下：</p>
-<p><img src="https://pic.downk.cc/item/5e858f04504f4bcb04d5769e.jpg" alt=""></p>
+<p><img src="https://pic.downk.cc/item/5e858f04504f4bcb04d5769e.jpg" alt></p>
 <h3 id="执行列、行计数（count）："><a href="#执行列、行计数（count）：" class="headerlink" title="执行列、行计数（count）："></a>执行列、行计数（count）：</h3><p>标准格式</p>
 <pre class=" language-mysql"><code class="language-mysql">SELECT
   COUNT(< 计数规范 >)
@@ -521,36 +521,36 @@ FROM < 表名 ></code></pre>
 <pre class=" language-mysql"><code class="language-mysql">SELECT
   COUNT(*)
 FROM t_student;</code></pre>
-<p><img src="https://pic.downk.cc/item/5e858f75504f4bcb04d5bfd2.jpg" alt=""></p>
+<p><img src="https://pic.downk.cc/item/5e858f75504f4bcb04d5bfd2.jpg" alt></p>
 <p><strong>也可加入筛选条件，如求女学生数目：</strong></p>
 <pre class=" language-mysql"><code class="language-mysql">SELECT
   COUNT(*)
 FROM t_student
 WHERE
   student_sex = '女';</code></pre>
-<p><img src="https://pic.downk.cc/item/5e858fba504f4bcb04d5f5c2.jpg" alt=""></p>
+<p><img src="https://pic.downk.cc/item/5e858fba504f4bcb04d5f5c2.jpg" alt></p>
 <p><strong>如果要计算班级数目，就需要用到<code>DISTINCT</code>：</strong></p>
 <pre class=" language-mysql"><code class="language-mysql">SELECT
   COUNT(DISTINCT student_class)
 FROM t_student;</code></pre>
-<p><img src="https://pic.downk.cc/item/5e858ffe504f4bcb04d637e9.jpg" alt=""></p>
+<p><img src="https://pic.downk.cc/item/5e858ffe504f4bcb04d637e9.jpg" alt></p>
 <p><code>DISTINCT</code>即去重，如果不加<code>DISTINCT</code>则结果为表行数——5。</p>
 <h3 id="返回列合计值（SUM）："><a href="#返回列合计值（SUM）：" class="headerlink" title="返回列合计值（SUM）："></a>返回列合计值（SUM）：</h3><p><font color="red">注：<code>sum</code>只有<code>ALL</code>与<code>DISTINCT</code>两种计数规范，无<code>*</code>。</font></p>
 <p><strong>计算学生年龄之和：</strong></p>
 <pre class=" language-mysql"><code class="language-mysql">SELECT
   SUM(student_age)
 FROM t_student;</code></pre>
-<p><img src="https://pic.downk.cc/item/5e8591b6504f4bcb04d765aa.jpg" alt=""></p>
+<p><img src="https://pic.downk.cc/item/5e8591b6504f4bcb04d765aa.jpg" alt></p>
 <h3 id="返回列平均值（AVG）："><a href="#返回列平均值（AVG）：" class="headerlink" title="返回列平均值（AVG）："></a>返回列平均值（AVG）：</h3><p><strong>计算学生平均年龄：</strong></p>
 <pre class=" language-mysql"><code class="language-mysql">SELECT
   AVG(student_age)
 FROM t_student;</code></pre>
-<p><img src="https://pic.downk.cc/item/5e8591db504f4bcb04d782a2.jpg" alt=""></p>
+<p><img src="https://pic.downk.cc/item/5e8591db504f4bcb04d782a2.jpg" alt></p>
 <h3 id="返回最大值-最小值（MAX-MIN）："><a href="#返回最大值-最小值（MAX-MIN）：" class="headerlink" title="返回最大值/最小值（MAX/MIN）："></a>返回最大值/最小值（MAX/MIN）：</h3><p><strong>求年龄最大的学生信息（最小值同理）：</strong></p>
 <pre class=" language-mysql"><code class="language-mysql">SELECT
   MAX(student_age)
 FROM t_student;</code></pre>
-<p><img src="https://pic.downk.cc/item/5e8591f9504f4bcb04d797a4.jpg" alt=""></p>
+<p><img src="https://pic.downk.cc/item/5e8591f9504f4bcb04d797a4.jpg" alt></p>
 <p><font color="red">注：这里只能求出最大年龄，要想显示年龄最大的学生全部信息，需要用到之后的子查询。</font></p>
 <h2 id="数据分组（GROUP-BY-："><a href="#数据分组（GROUP-BY-：" class="headerlink" title="数据分组（GROUP BY)："></a>数据分组（GROUP BY)：</h2><p><code>SQL</code>中数据可以按列名分组，搭配聚合函数十分实用。</p>
 <p>例，统计每个班的人数:</p>
@@ -561,7 +561,7 @@ FROM t_student
 GROUP BY
   (student_class);</code></pre>
 <p><code>AS</code>为定义别名，别名的使用在组合及联接查询时会有很好的效果，之后再说。</p>
-<p><img src="https://pic.downk.cc/item/5e85922e504f4bcb04d7bdd7.jpg" alt=""></p>
+<p><img src="https://pic.downk.cc/item/5e85922e504f4bcb04d7bdd7.jpg" alt></p>
 <p>分组中也可以加入筛选条件<code>WHERE</code>，不过这里一定要注意的是，执行顺序为：</p>
 <ol>
 <li><code>WHERE</code>过滤</li>
@@ -578,7 +578,7 @@ WHERE
   student_age > 20
 GROUP BY
   (student_class);</code></pre>
-<p><img src="https://pic.downk.cc/item/5e859258504f4bcb04d7de5a.jpg" alt=""></p>
+<p><img src="https://pic.downk.cc/item/5e859258504f4bcb04d7de5a.jpg" alt></p>
 <h3 id="HAVING过滤条件："><a href="#HAVING过滤条件：" class="headerlink" title="HAVING过滤条件："></a>HAVING过滤条件：</h3><p>之前说了分组操作、聚合函数、<code>WHERE</code>过滤的执行顺序，那如果我们希望在聚合之后执行过滤条件怎么办？</p>
 <p>例，我们想查询平均年龄在20岁以上的班级</p>
 <p>能用下面的语句吗？</p>
@@ -600,7 +600,7 @@ GROUP BY
   (student_class)
 HAVING
   AVG(student_age) > 20;</code></pre>
-<p><img src="https://pic.downk.cc/item/5e859290504f4bcb04d808b0.jpg" alt=""></p>
+<p><img src="https://pic.downk.cc/item/5e859290504f4bcb04d808b0.jpg" alt></p>
 <p>这里再啰嗦一句</p>
 <p><strong><code>SQL</code>的执行顺序：</strong></p>
 <ul>
@@ -619,13 +619,13 @@ HAVING
 </ul>
 <h2 id="子查询："><a href="#子查询：" class="headerlink" title="子查询："></a>子查询：</h2><p>为什么要子查询？</p>
 <p>现有一数据表如下：</p>
-<p><img src="https://pic.downk.cc/item/5e8592b7504f4bcb04d825d3.jpg" alt=""><br>根据之前的知识我们可以查出每门科目的最高分，但是要想查出取得最高分的学生信息就做不到了。这时就需要用到子查询来取得完整的信息。</p>
+<p><img src="https://pic.downk.cc/item/5e8592b7504f4bcb04d825d3.jpg" alt><br>根据之前的知识我们可以查出每门科目的最高分，但是要想查出取得最高分的学生信息就做不到了。这时就需要用到子查询来取得完整的信息。</p>
 <p>什么是子查询？子查询就是嵌套在主查询中的查询。</p>
 <p>子查询可以嵌套在主查询中所有位置，包括<code>SELECT</code>、<code>FROM</code>、<code>WHERE</code>、<code>GROUP BY</code>、<code>HAVING</code>、<code>ORDER BY</code>。</p>
 <p>但并不是每个位置嵌套子查询都是有意义并实用的，这里对几种有实际意义的子查询进行说明。</p>
 <p>现有表两张：一张学生表、一张班表。<code>id</code>相关联</p>
-<p><img src="https://pic.downk.cc/item/5e8592df504f4bcb04d84202.jpg" alt=""></p>
-<p><img src="https://pic.downk.cc/item/5e8592eb504f4bcb04d84c01.jpg" alt=""></p>
+<p><img src="https://pic.downk.cc/item/5e8592df504f4bcb04d84202.jpg" alt></p>
+<p><img src="https://pic.downk.cc/item/5e8592eb504f4bcb04d84c01.jpg" alt></p>
 <h3 id="在SELECT中嵌套："><a href="#在SELECT中嵌套：" class="headerlink" title="在SELECT中嵌套："></a>在SELECT中嵌套：</h3><p>学生信息和班级名称位于不同的表中，要在同一张表中查出学生的学号、姓名、班级名称：</p>
 <pre class=" language-mysql"><code class="language-mysql">SELECT
   s.student_id,
@@ -645,8 +645,8 @@ GROUP BY
 <p>接下来回到上面的<code>SQL</code>语句中，可以看出本条子查询的嵌套是在<code>SELECT</code>位置（括号括起来的部分），它与学号、学生姓名以逗号分隔开并列在<code>SELECT</code>位置，也就是说它是我们想要查出的一列，</p>
 <p>子查询中查出的是，班级表中的班级<code>id</code>与学生表中的班级<code>id</code>相同的行，注意 <code>WHERE c.class_id=s.class_id</code>这里就是别名用法的一个很好的体现，区分开了两张表中同样列名的列。</p>
 <p>结果：</p>
-<p><img src="https://pic.downk.cc/item/5e859338504f4bcb04d88208.jpg" alt=""><br>最后的<code>GROUP BY</code>可以理解为对重复行的去重，如果不加：</p>
-<p><img src="https://pic.downk.cc/item/5e859345504f4bcb04d88abb.jpg" alt=""></p>
+<p><img src="https://pic.downk.cc/item/5e859338504f4bcb04d88208.jpg" alt><br>最后的<code>GROUP BY</code>可以理解为对重复行的去重，如果不加：</p>
+<p><img src="https://pic.downk.cc/item/5e859345504f4bcb04d88abb.jpg" alt></p>
 <h3 id="在WHERE中嵌套："><a href="#在WHERE中嵌套：" class="headerlink" title="在WHERE中嵌套："></a>在WHERE中嵌套：</h3><p>现要查出C语言成绩最高的学生的信息：</p>
 <pre class=" language-mysql"><code class="language-mysql">SELECT
   *
@@ -661,7 +661,7 @@ WHERE
       student_subject = 'C语言'
   );</code></pre>
 <p>结果：</p>
-<p><img src="https://pic.downk.cc/item/5e85936a504f4bcb04d8a527.jpg" alt=""><br>这里出现了一个<code>ALL</code>，其为子查询运算符</p>
+<p><img src="https://pic.downk.cc/item/5e85936a504f4bcb04d8a527.jpg" alt><br>这里出现了一个<code>ALL</code>，其为子查询运算符</p>
 <p>分类：</p>
 <ul>
 <li><p><code>ALL</code>运算符<br>和子查询的结果逐一比较，必须全部满足时表达式的值才为真。</p>
@@ -686,7 +686,7 @@ WHERE
       student_name = '李四'
       AND student_subject = 'C语言'
   );</code></pre>
-<p><img src="https://pic.downk.cc/item/5e8593dd504f4bcb04d8f4ac.jpg" alt=""></p>
+<p><img src="https://pic.downk.cc/item/5e8593dd504f4bcb04d8f4ac.jpg" alt></p>
 <p>通过上面两例，应该可以明白子查询在<code>WHERE</code>中嵌套的作用。通过子查询中返回的列值来作为比较对象，在<code>WHERE</code>中运用不同的比较运算符来对其进行比较，从而得到结果。</p>
 <p>现在我们回到最开始的问题，怎么查出每门课最高成绩的学生的信息：</p>
 <pre class=" language-mysql"><code class="language-mysql">SELECT
@@ -702,7 +702,7 @@ WHERE
   );</code></pre>
 <p>这里就是上文提到的别名的第二种用法，主、子查询对同一张表操作，区分开位于内外表中相同的列名。</p>
 <p>结果：</p>
-<p><img src="https://pic.downk.cc/item/5e8593f4504f4bcb04d90360.jpg" alt=""></p>
+<p><img src="https://pic.downk.cc/item/5e8593f4504f4bcb04d90360.jpg" alt></p>
 <h3 id="子查询的分类："><a href="#子查询的分类：" class="headerlink" title="子查询的分类："></a>子查询的分类：</h3><ul>
 <li><p>相关子查询</p>
 <ul>

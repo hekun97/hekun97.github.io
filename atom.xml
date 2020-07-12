@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/hekun97/hekun97.github.io/"/>
-  <updated>2020-07-12T09:58:35.065Z</updated>
+  <updated>2020-07-12T10:27:26.488Z</updated>
   <id>https://github.com/hekun97/hekun97.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://github.com/hekun97/hekun97.github.io/2020/07/12/test/"/>
+    <id>https://github.com/hekun97/hekun97.github.io/2020/07/12/test/</id>
+    <published>2020-07-12T10:24:27.000Z</published>
+    <updated>2020-07-12T10:27:26.488Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;这是一个测试&quot;&gt;&lt;a href=&quot;#这是一个测试&quot; class=&quot;headerlink&quot; title=&quot;这是一个测试&quot;&gt;&lt;/a&gt;这是一个测试&lt;/h1&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="hihi" scheme="https://github.com/hekun97/hekun97.github.io/tags/hihi/"/>
+    
+  </entry>
   
   <entry>
     <title>img</title>

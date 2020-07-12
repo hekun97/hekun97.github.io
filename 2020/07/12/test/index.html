@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SQL语句汇总（二）——数据修改、数据查询, 贺坤的个人博客">
+    <meta name="keywords" content="test, 贺坤的个人博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>SQL语句汇总（二）——数据修改、数据查询 | 贺坤的个人博客</title>
+    <title>test | 贺坤的个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">SQL语句汇总（二）——数据修改、数据查询</h1>
+                    <h1 class="description center-align post-title">test</h1>
                 </div>
             </div>
         </div>
@@ -437,9 +437,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/hihi/">
+                                <span class="chip bg-color">hihi</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -465,14 +469,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    6
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    1 分
                 </div>
                 
 
@@ -487,221 +491,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="SQL语句汇总（二）——数据修改、数据查询"><a href="#SQL语句汇总（二）——数据修改、数据查询" class="headerlink" title="SQL语句汇总（二）——数据修改、数据查询"></a>SQL语句汇总（二）——数据修改、数据查询</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><code>SQL</code>语句第二篇，不说废话直接开始吧。</p>
-<p>首先创建一张表如下，创建表的方法在上篇介绍过了，这里就不再赘述。</p>
-<p><img src="https://pic.downk.cc/item/5e858868504f4bcb04d08c36.jpg" alt></p>
-<h2 id="数据修改"><a href="#数据修改" class="headerlink" title="数据修改"></a>数据修改</h2><ul>
-<li>添加新数据</li>
-<li>更改数据</li>
-<li>删除数据（行）</li>
-</ul>
-<h3 id="添加新数据："><a href="#添加新数据：" class="headerlink" title="添加新数据："></a>添加新数据：</h3><pre class=" language-mysql"><code class="language-mysql">INSERT INTO < 表名 > 
-  (< 列名列表 >)
-VALUES
-  (< 值列表 >)</code></pre>
-<p><strong>如：</strong></p>
-<pre class=" language-mysql"><code class="language-mysql">INSERT INTO t_student (
-    student_id,
-    student_name,
-    student_age,
-    student_sex
-  )
-VALUES
-  (1, '大毛', 18, '男');</code></pre>
-<p><img src="https://pic.downk.cc/item/5e85889d504f4bcb04d0b802.jpg" alt><br>其中列名可以省略，省略之后要求插入的值必须与列一一对应：</p>
-<pre class=" language-mysql"><code class="language-mysql">INSERT INTO t_student
-VALUES
-  (2, '王二', 20, '男');</code></pre>
-<p><img src="https://pic.downk.cc/item/5e8588f6504f4bcb04d10c43.jpg" alt></p>
-<p><strong>多行数据添加：</strong></p>
-<pre class=" language-mysql"><code class="language-mysql">INSERT INTO t_student
-VALUES
-  (3, '张三', 22, '男'),
-  (4, '李四', 17, '女'),
-  (5, '王五', 23, '男');</code></pre>
-<p><img src="https://pic.downk.cc/item/5e8588f6504f4bcb04d10c43.jpg" alt></p>
-<h3 id="更改数据："><a href="#更改数据：" class="headerlink" title="更改数据："></a>更改数据：</h3><pre class=" language-mysql"><code class="language-mysql">UPDATE 表名
-SET
-  列1 = 新值1,
-  列2 = 新值2
-WHERE
-  过滤条件</code></pre>
-<p>假如要修改李四的年龄为21岁</p>
-<pre class=" language-mysql"><code class="language-mysql">UPDATE t_student
-SET
-  student_age = 21
-WHERE
-  student_name = '李四';</code></pre>
-<p><img src="https://pic.downk.cc/item/5e858953504f4bcb04d15f04.jpg" alt></p>
-<p><font color="red">注：修改多个列的值时用逗号隔开。要想设置某一列的值为空，只需让<code>&lt;列名&gt;=NULL</code> 即可。<code>WHERE</code>表示过滤条件。</font></p>
-<h3 id="删除数据（行）："><a href="#删除数据（行）：" class="headerlink" title="删除数据（行）："></a>删除数据（行）：</h3><pre class=" language-mysql"><code class="language-mysql">DELETE FROM 表名
-WHERE
-  过滤条件</code></pre>
-<p>现要删除20到22岁的学生信息：</p>
-<pre class=" language-mysql"><code class="language-mysql">DELETE FROM t_student
-WHERE
-  student_age BETWEEN 20
-  AND 22;</code></pre>
-<p><img src="https://pic.downk.cc/item/5e8589b5504f4bcb04d1aa51.jpg" alt></p>
-<p><code>WHERE</code>的判断条件之后会更详细的介绍。</p>
-<p>删除除了<code>DELETE</code>还有一种方法<code>TRUNCATE</code>，写法：</p>
-<pre class=" language-mysql"><code class="language-mysql">TRUNCATE TABLE 表名</code></pre>
-<p><strong>二者区别在于：</strong><br><code>DELETE</code>会记录日志，意味着删除后的数据还可以恢复，但是效率低。<code>TRUNCATE</code>不会记录日志，删除后的数据不能恢复，但是效率高。需要注意的是，<code>TRUNCATE</code>不能用于有外键约束引用的表。</p>
-<h2 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h2><p>分类：</p>
-<ul>
-<li><p>投影操作<br>指定查询结果中能显示哪些列</p>
-</li>
-<li><p>选择操作<br>指定哪些行出现在结果中</p>
-</li>
-<li><p>排序操作<br>指定查询的结果以什么样的顺序显示</p>
-</li>
-</ul>
-<h3 id="投影操作："><a href="#投影操作：" class="headerlink" title="投影操作："></a>投影操作：</h3><pre class=" language-mysql"><code class="language-mysql">SELECT
-  列1,
-  列2
-FROM 表名</code></pre>
-<p>多个列中间用逗号隔开，如果选择所有列可以用<code>*</code>号简写。</p>
-<p>还是此表：</p>
-<p><img src="https://pic.downk.cc/item/5e858953504f4bcb04d15f04.jpg" alt></p>
-<p>现在只想要查看姓名和年龄列：</p>
-<pre class=" language-mysql"><code class="language-mysql">SELECT
-  student_name,
-  student_age
-FROM t_student;</code></pre>
-<p><img src="https://pic.downk.cc/item/5e858b21504f4bcb04d2a9a9.jpg" alt></p>
-<p>注意这里不是把其他列删除了，而是只显示我们想看见的部分。</p>
-<pre class=" language-mysql"><code class="language-mysql">SELECT
-  CONCAT(student_name, '——', student_age) '组合值'
-FROM t_student;</code></pre>
-<p><code>CONCAT</code>，可以将列与列之间用想要的符号连接起来：  </p>
-<p><img src="https://pic.downk.cc/item/5e858b6d504f4bcb04d2e262.jpg" alt></p>
-<h4 id="排除重复——DISTINCT"><a href="#排除重复——DISTINCT" class="headerlink" title="排除重复——DISTINCT"></a>排除重复——DISTINCT</h4><p>现给原表加入一班级列：</p>
-<p><img src="https://pic.downk.cc/item/5e858baa504f4bcb04d30d15.jpg" alt></p>
-<p>按照之前方法查询班级列得到：</p>
-<p><img src="https://pic.downk.cc/item/5e858bba504f4bcb04d31704.jpg" alt></p>
-<p>但是我们只想查看具体有哪些班级，这里就需要用到去重，也就是<code>DISTINCT</code>。</p>
-<pre class=" language-mysql"><code class="language-mysql">SELECT
-  DISTINCT student_class
-FROM t_student;</code></pre>
-<p><img src="https://pic.downk.cc/item/5e858bd7504f4bcb04d32e9b.jpg" alt></p>
-<h4 id="返回限定行数的查询——LIMIT"><a href="#返回限定行数的查询——LIMIT" class="headerlink" title="返回限定行数的查询——LIMIT"></a>返回限定行数的查询——<code>LIMIT</code></h4><p><code>LIMIT</code>后面参数为1或2个：</p>
-<p><code>LIMIT N</code>表示从第一行开始返回<code>N</code>行结果，<code>LIMIT i,N</code>表示从第<code>i+1</code>行开始返回<code>N</code>行结果。</p>
-<p>例：</p>
-<pre class=" language-mysql"><code class="language-mysql">SELECT
-  *
-FROM t_student
-LIMIT
-  3;</code></pre>
-<p><img src="https://pic.downk.cc/item/5e858c13504f4bcb04d35ddb.jpg" alt></p>
-<pre class=" language-mysql"><code class="language-mysql">SELECT
-  *
-FROM t_student
-LIMIT
-  2, 3;</code></pre>
-<p><img src="https://pic.downk.cc/item/5e858c21504f4bcb04d36847.jpg" alt></p>
-<p><font color="red">注：<code>LIMIT</code>很重要，它是之后做数据表格分页的关键。</font></p>
-<h3 id="选择操作——WHERE："><a href="#选择操作——WHERE：" class="headerlink" title="选择操作——WHERE："></a>选择操作——WHERE：</h3><ul>
-<li>单条件选择</li>
-<li>多条件选择</li>
-</ul>
-<p><strong>单条件选择标准结构：</strong></p>
-<pre class=" language-mysql"><code class="language-mysql">SELECT
-  列1,
-  列2
-FROM 表名
-WHERE
-  列3 = 值</code></pre>
-<p>关系运算符包括：<code>&gt;  &gt;=  &lt;  &lt;=  =  !=</code></p>
-<p><strong>多条件选择标准结构：</strong></p>
-<pre class=" language-mysql"><code class="language-mysql">SELECT
-  列A,
-  列B
-FROM 表
-WHERE
-  条件1 (
-    AND 或者OR
-  ) 条件2</code></pre>
-<p>其中<code>AND</code>表示并且，<code>OR</code>表示或者。</p>
-<h4 id="选择范围——BETWEEN"><a href="#选择范围——BETWEEN" class="headerlink" title="选择范围——BETWEEN"></a>选择范围——BETWEEN</h4><p>如：</p>
-<pre class=" language-mysql"><code class="language-mysql">SELECT
-  *
-FROM t_student
-WHERE
-  student_age BETWEEN 20
-  AND 23;</code></pre>
-<p><img src="https://pic.downk.cc/item/5e858c9c504f4bcb04d3bc84.jpg" alt></p>
-<p><code>BETWEEN</code>后的值为从下限到上限。</p>
-<h4 id="定义集合——IN或NOT-IN"><a href="#定义集合——IN或NOT-IN" class="headerlink" title="定义集合——IN或NOT IN"></a>定义集合——IN或NOT IN</h4><p>现在想查看年龄为17、20、23的学生信息： </p>
-<pre class=" language-mysql"><code class="language-mysql">SELECT
-  *
-FROM t_student
-WHERE
-  student_age IN (17, 20, 23);</code></pre>
-<p><img src="https://pic.downk.cc/item/5e858cca504f4bcb04d3d9f6.jpg" alt><br>反之<code>NOT IN</code>就是选择不包括在集合里的学生信息。</p>
-<h4 id="模糊查询——LIKE"><a href="#模糊查询——LIKE" class="headerlink" title="模糊查询——LIKE"></a>模糊查询——LIKE</h4><p>为了更好的解释模糊查询，这里重新建张表：</p>
-<p><img src="https://pic.downk.cc/item/5e858ce6504f4bcb04d3ea6c.jpg" alt></p>
-<p>这里姓王的兄弟们躺枪…别介意。</p>
-<p><strong>首先先说下占位符与通配符：</strong></p>
-<p>占位符 <code>_</code>，表示任何单个字符。</p>
-<p>通配符 <code>%</code>，表示包含零或多个字符。</p>
-<p>下面就来用模糊查询逐一选中我们想要的行。</p>
-<p><strong>名字只有两个字的：</strong></p>
-<pre class=" language-mysql"><code class="language-mysql">SELECT
-  *
-FROM t_student
-WHERE
-  student_name LIKE '__';</code></pre>
-<p>这里可能看不清，引号里实际是两个占位符。</p>
-<p><img src="https://pic.downk.cc/item/5e858d07504f4bcb04d400b9.jpg" alt></p>
-<p><strong>所有姓王的：</strong></p>
-<pre class=" language-mysql"><code class="language-mysql">SELECT
-  *
-FROM t_student
-WHERE
-  student_name LIKE '王%';</code></pre>
-<p><img src="https://pic.downk.cc/item/5e858d22504f4bcb04d411df.jpg" alt></p>
-<p><strong>最后一个字是“王”的：</strong></p>
-<pre class=" language-mysql"><code class="language-mysql">SELECT
-  *
-FROM t_student
-WHERE
-  student_name LIKE '%王';</code></pre>
-<p><img src="https://pic.downk.cc/item/5e858d59504f4bcb04d43c32.jpg" alt><br><strong>只要是名字中有“王”字的：</strong></p>
-<pre class=" language-mysql"><code class="language-mysql">SELECT
-  *
-FROM t_student
-WHERE
-  student_name LIKE '%王%';</code></pre>
-<p><img src="https://pic.downk.cc/item/5e858d69504f4bcb04d448d9.jpg" alt><br>这下模糊查询就很明白了吧，当然还有其他组合，大家可以自己尝试。</p>
-<h4 id="处理空值数据："><a href="#处理空值数据：" class="headerlink" title="处理空值数据："></a>处理空值数据：</h4><p>判断条件不能用<code>列名=NULL</code>，而是要用<code>IS NULL</code>或<code>IS NOT NULL</code>。</p>
-<p><strong>标准写法：</strong></p>
-<pre class=" language-mysql"><code class="language-mysql">SELECT
-  *
-FROM t_student
-WHERE
-  性别 IS NULL</code></pre>
-<h3 id="排序操作——ORDER-BY："><a href="#排序操作——ORDER-BY：" class="headerlink" title="排序操作——ORDER BY："></a>排序操作——ORDER BY：</h3><p>使用<code>ORDER BY</code>时，列名上指定<code>ASC</code>或<code>DESC</code>。<code>ASC</code>表示正序，<code>DESC</code>表示倒序。如果不指定则默认为正序。</p>
-<p><strong>按年龄排：</strong></p>
-<pre class=" language-mysql"><code class="language-mysql">SELECT
-  *
-FROM t_student
-ORDER BY
-  student_age ASC;</code></pre>
-<p><img src="https://pic.downk.cc/item/5e858dc8504f4bcb04d4a68a.jpg" alt></p>
-<pre class=" language-mysql"><code class="language-mysql">SELECT
-  *
-FROM t_student
-ORDER BY
-  student_age DESC;</code></pre>
-<p><img src="https://pic.downk.cc/item/5e858dc8504f4bcb04d4a68a.jpg" alt></p>
-<h2 id="最后一定要注意！"><a href="#最后一定要注意！" class="headerlink" title="最后一定要注意！"></a>最后一定要注意！</h2><p><strong>基本查询SQL的执行顺序：</strong></p>
-<ol>
-<li>执行<code>FROM</code></li>
-<li><code>WHERE</code>条件过滤 </li>
-<li><code>SELECT</code>投影 </li>
-<li><code>ORDER BY</code>排序</li>
-</ol>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p><code>SQL</code>的第二篇就到这里了。</p>
+                <h1 id="这是一个测试"><a href="#这是一个测试" class="headerlink" title="这是一个测试"></a>这是一个测试</h1><p><img src="/hekun97/hekun97.github.io/2020/07/12/test/E:%5CHexo-Blog%5Csource_posts%5Ctest%5Cdebug0.png" alt="示例"></p>
 
             </div>
             <hr/>
@@ -727,7 +517,7 @@ ORDER BY
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/hekun97/hekun97.github.io/2020/07/12/sql-yu-ju-hui-zong-er-shu-ju-xiu-gai-shu-ju-cha-xun/">https://github.com/hekun97/hekun97.github.io/2020/07/12/sql-yu-ju-hui-zong-er-shu-ju-xiu-gai-shu-ju-cha-xun/</a>
+                    <a href="https://github.com/hekun97/hekun97.github.io/2020/07/12/test/">https://github.com/hekun97/hekun97.github.io/2020/07/12/test/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -764,7 +554,11 @@ ORDER BY
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/hihi/">
+                                    <span class="chip bg-color">hihi</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -930,30 +724,31 @@ ORDER BY
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/12/sql-yu-ju-hui-zong-zhong-pian-biao-lian-jie-yu-lian-jie-cha-xun/">
+                <a href="/2020/07/12/test/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="SQL语句汇总（终篇）—— 表联接与联接查询">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="test">
                         
-                        <span class="card-title">SQL语句汇总（终篇）—— 表联接与联接查询</span>
+                        <span class="card-title">test</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            SQL语句汇总（终篇）—— 表联接与联接查询前言既然是最后一篇那就不能只列出些干枯的标准语句，更何况表联接也是SQL中较难的部分，所以此次搭配题目来详细阐述表联接。
-表联接上一篇博文说到相关子查询效率低下，那我们怎么能将不同表的信息一起查询
+                            这是一个测试
+
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -961,6 +756,15 @@ ORDER BY
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hihi/">
+                        <span class="chip bg-color">hihi</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -972,20 +776,28 @@ ORDER BY
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/12/sql-yu-ju-hui-zong-yi-shu-ju-ku-yu-biao-de-cao-zuo-yi-ji-chuang-jian-yue-shu/">
+                <a href="/2020/07/12/img/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="SQL语句汇总（一）——数据库与表的操作以及创建约束">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="img">
                         
-                        <span class="card-title">SQL语句汇总（一）——数据库与表的操作以及创建约束</span>
+                        <span class="card-title">img</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            SQL语句汇总（一）——数据库与表的操作以及创建约束前言此文旨在汇总从建立数据库到联接查询等绝大部分SQL语句。SQL语句虽不能说很多，但稍有时间不写就容易出错。博主希望通过此文来战胜自己的健忘。
-SQL是 Structured Query
+                            day04 【Map】主要内容
+Map集合
+
+教学目标
+ 能够说出Map集合特点
+ 使用Map集合添加方法保存数据
+ 使用”键找值”的方式遍历Map集合
+ 使用”键值对”的方式遍历Map集合
+ 能够使用HashMap存储自定义键值对的数据
+
                         
                     </div>
                     <div class="publish-info">
