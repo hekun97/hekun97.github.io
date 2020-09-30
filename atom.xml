@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>贺坤的个人博客</title>
+  <title>专业治头秃的博客</title>
   
   <subtitle>Simple is better than complex!</subtitle>
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>http://hekun97@github.io/</id>
   
   <author>
-    <name>贺坤</name>
+    <name>专业治头秃</name>
     
   </author>
   
