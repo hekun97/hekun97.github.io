@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hekun97@github.io/"/>
-  <updated>2021-03-19T03:36:44.981Z</updated>
+  <updated>2021-03-24T01:16:12.130Z</updated>
   <id>http://hekun97@github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://hekun97@github.io/2021/03/24/xml-bi-ji/"/>
+    <id>http://hekun97@github.io/2021/03/24/xml-bi-ji/</id>
+    <published>2021-03-24T01:16:12.121Z</published>
+    <updated>2021-03-24T01:16:12.130Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;导航&quot;&gt;&lt;a href=&quot;#导航&quot; class=&quot;headerlink&quot; title=&quot;导航&quot;&gt;&lt;/a&gt;导航&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;概念&lt;/li&gt;
+&lt;li&gt;语法&lt;/li&gt;
+&lt;li&gt;约束与解析&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;1-XML概念&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title></title>
