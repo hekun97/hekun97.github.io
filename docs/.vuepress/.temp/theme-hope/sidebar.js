@@ -1,1 +1,0 @@
-export const sidebarData = {"/mac/":["Mac-mounts-Ali-cloud-disk"],"/demo/":["page","markdown","disable","encrypt"],"/guide/":["",{"text":"Bar 功能","prefix":"bar/","collapsible":true,"icon":"creative","children":["","baz"]},{"text":"Foo 功能","prefix":"foo/","collapsible":true,"icon":"config","children":["","ray"]}]};
