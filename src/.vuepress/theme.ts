@@ -1,13 +1,13 @@
 import { hopeTheme } from "vuepress-theme-hope";
-import { zhNavbar } from "./navbar/index.js";
-import { zhSidebar } from "./sidebar/index.js";
+import { Navbar } from "./navbar.js";
+import { Sidebar } from "./sidebar.js";
 
 export default hopeTheme({
   hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
 
   author: {
-    name: "Mr.Hope",
-    url: "https://mrhope.site",
+    name: "Mr.he",
+    url: "https://github.com/hekun97",
   },
 
   iconAssets: "iconfont",
@@ -24,10 +24,10 @@ export default hopeTheme({
      */
     "/": {
       // navbar
-      navbar: zhNavbar,
+      navbar: Navbar,
 
       // sidebar
-      sidebar: zhSidebar,
+      sidebar: Sidebar,
 
       footer: "默认页脚",
 
