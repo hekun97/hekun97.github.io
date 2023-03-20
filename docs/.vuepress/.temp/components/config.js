@@ -16,9 +16,9 @@ export default defineClientConfig({
     
   },
   setup: () => {
-      useStyleTag(`\
-  @import url("//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css");
-  `);
+    useStyleTag(`\
+@import url("//at.alicdn.com/t/c/font_3964306_i9j0ov480dn.css");
+`);
   },
   rootComponents: [
     () => h(BackToTop, { threshold: 300 }),

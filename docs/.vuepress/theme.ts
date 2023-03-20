@@ -9,10 +9,10 @@ export default hopeTheme({
     name: "Mr.he",
     url: "https://github.com/hekun97",
   },
-
-  iconAssets: "iconfont",
-
-  logo: "/logo.svg",
+  //图标地址
+  iconAssets: "//at.alicdn.com/t/c/font_3964306_i9j0ov480dn.css",
+  //站点logo
+  logo: "/Dinosaur-logo.jpg",
 
   repo: "vuepress-theme-hope/vuepress-theme-hope",
 

@@ -8,8 +8,8 @@ export default defineUserConfig({
   locales: {
     "/": {
       lang: "zh-CN",
-      title: "文档演示",
-      description: "vuepress-theme-hope 的文档演示",
+      title: "专业治头秃的学习笔记",
+      description: "不断学习中的学习笔记记录",
     },
   },
   //主题设置

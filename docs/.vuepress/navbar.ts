@@ -1,8 +1,8 @@
 import { navbar } from "vuepress-theme-hope";
 
 export const Navbar = navbar([
-  "/",
-  { text: "案例", icon: "discover", link: "/demo/" },
+  //"/",
+  { text: "案例", icon: "discovery", link: "/demo/" },
   {
     text: "指南",
     icon: "creative",
@@ -26,5 +26,10 @@ export const Navbar = navbar([
     text: "V2 文档",
     icon: "note",
     link: "https://theme-hope.vuejs.press/zh/",
+  },
+  {
+    text: "Mac使用相关",
+    icon: "mac",
+    link: "/mac/",
   },
 ]);

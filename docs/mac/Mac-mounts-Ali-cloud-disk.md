@@ -1,6 +1,6 @@
 ---
 title: Mac阿里云盘挂载本地
-icon: config
+icon: wangpan
 order: 1
 category:
   - webdev
