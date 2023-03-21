@@ -4,5 +4,6 @@ export const Sidebar = sidebar({
   "/mac/": "structure",
   "/demo/": "structure",
   "/guide/": "structure",
+  "/git/": "structure",
 });
 

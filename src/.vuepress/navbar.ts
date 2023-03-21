@@ -32,4 +32,9 @@ export const Navbar = navbar([
     icon: "mac",
     link: "/mac/",
   },
+  {
+    text: "git笔记",
+    icon: "git",
+    link: "/git/",
+  },
 ]);
