@@ -5,5 +5,7 @@ export const Sidebar = sidebar({
   "/demo/": "structure",
   "/guide/": "structure",
   "/git/": "structure",
+  "/vuepress/": "structure",
+  "/java/": "structure",
 });
 

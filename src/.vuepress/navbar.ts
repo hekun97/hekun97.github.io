@@ -2,6 +2,17 @@ import { navbar } from "vuepress-theme-hope";
 
 export const Navbar = navbar([
   //"/",
+  {
+    text: "Java笔记",
+    icon: "java",
+    prefix: "/java/",
+    children: [
+      {
+        text: "JavaWeb",
+        link: "JavaWeb/Tomcat-base",
+      }
+    ],
+  },
   { text: "案例", icon: "discovery", link: "/demo/" },
   {
     text: "指南",
@@ -36,5 +47,10 @@ export const Navbar = navbar([
     text: "git笔记",
     icon: "git",
     link: "/git/",
+  },
+  {
+    text: "vuepress折腾",
+    icon: "vue",
+    link: "/vuepress/",
   },
 ]);
