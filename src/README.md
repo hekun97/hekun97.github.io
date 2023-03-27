@@ -1,17 +1,17 @@
 ---
 home: true
 icon: home
-title: 项目主页
-heroImage: /logo.svg
-heroText: 项目名称
-tagline: 你可以在这里放置或是整个项目的描述。
+title: 主页
+heroImage: /logo.png
+heroText: 学习折腾笔记
+tagline: 个人的一些学习和折腾笔记。
 actions:
-  - text: 使用指南 💡
-    link: /demo/
+  - text: Java笔记 💡
+    link: /java/JavaWeb/01.Tomcat/01.WEBServer-base/
     type: primary
 
-  - text: 文档
-    link: /guide/
+  - text: vuepress折腾
+    link: /vuepress/
 
 features:
   - title: Markdown 增强
@@ -99,11 +99,7 @@ features:
     details: 包括图标支持、全屏按钮、返回顶部按钮等
     link: https://theme-hope.vuejs.press/zh/guide/feature/
 copyright: false
-footer: 使用 <a href="https://theme-hope.vuejs.press/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.Hope
+footer: 使用 <a href="https://theme-hope.vuejs.press/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-present Mr.hk
 ---
 
-这是项目主页的案例。你可以在这里放置你的主体内容。
-
-想要使用此布局，你需要在页面 front matter 中设置 `home: true`。
-
-配置项的相关说明详见 [项目主页配置](https://theme-hope.vuejs.press/zh/guide/layout/home/)。
+菩提本无树，明镜亦非台，本来无一物，何处惹尘埃？

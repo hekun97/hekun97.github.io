@@ -9,34 +9,9 @@ export const Navbar = navbar([
     children: [
       {
         text: "JavaWeb",
-        link: "JavaWeb/Tomcat-base",
+        link: "JavaWeb/01.Tomcat/01.WEBServer-base",
       }
     ],
-  },
-  { text: "案例", icon: "discovery", link: "/demo/" },
-  {
-    text: "指南",
-    icon: "creative",
-    prefix: "/guide/",
-    children: [
-      {
-        text: "Bar",
-        icon: "creative",
-        prefix: "bar/",
-        children: ["baz", { text: "...", icon: "more", link: "" }],
-      },
-      {
-        text: "Foo",
-        icon: "config",
-        prefix: "foo/",
-        children: ["ray", { text: "...", icon: "more", link: "" }],
-      },
-    ],
-  },
-  {
-    text: "V2 文档",
-    icon: "note",
-    link: "https://theme-hope.vuejs.press/zh/",
   },
   {
     text: "Mac使用相关",

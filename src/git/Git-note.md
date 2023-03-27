@@ -1,7 +1,6 @@
 ---
 title: Git笔记
 date: 2020-10-14 14:43:43
-icon: git
 order: 1
 tags: 
 - Git

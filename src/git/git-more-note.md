@@ -1,12 +1,9 @@
 ---
 title: Git使用小技巧【修改commit注释】
 date: 2022-08-01 12:43:21
-tags: 
-- Git
+order: 2
 category:
 - Git
-type: artitalk
-cover: https://cdn.pixabay.com/photo/2022/05/18/12/04/flower-7205105_1280.jpg
 
 ---
 

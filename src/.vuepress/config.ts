@@ -9,7 +9,7 @@ export default defineUserConfig({
   locales: {
     "/": {
       lang: "zh-CN",
-      title: "专业治头秃的学习笔记",
+      title: "专业治头秃",
       description: "不断学习中的学习笔记记录",
     },
   },

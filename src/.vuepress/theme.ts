@@ -12,7 +12,7 @@ export default hopeTheme({
   //图标地址
   iconAssets: "//at.alicdn.com/t/c/font_3964306_8fx1p02f11x.css",
   //站点logo
-  logo: "/Dinosaur-logo.jpg",
+  logo: "/logo.png",
 
   repo: "vuepress-theme-hope/vuepress-theme-hope",
 
