@@ -3,15 +3,9 @@ import { navbar } from "vuepress-theme-hope";
 export const Navbar = navbar([
   //"/",
   {
-    text: "Java笔记",
+    text: "JavaWeb",
     icon: "java",
-    prefix: "/java/",
-    children: [
-      {
-        text: "JavaWeb",
-        link: "JavaWeb/01.Tomcat/01.WEBServer-base",
-      }
-    ],
+    link: "/JavaWeb/1.WEBServer-base/"
   },
   {
     text: "Mac使用相关",

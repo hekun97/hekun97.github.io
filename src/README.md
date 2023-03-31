@@ -7,7 +7,7 @@ heroText: 学习折腾笔记
 tagline: 个人的一些学习和折腾笔记。
 actions:
   - text: Java笔记 💡
-    link: /java/JavaWeb/01.Tomcat/01.WEBServer-base/
+    link: /JavaWeb/1.WEBServer-base/
     type: primary
 
   - text: vuepress折腾
