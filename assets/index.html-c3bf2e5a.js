@@ -1,1 +1,0 @@
-import{_ as e,W as t,X as n,Y as _}from"./framework-174e6972.js";const c={},o=_("p",null,"菩提本无树，明镜亦非台，本来无一物，何处惹尘埃？",-1),s=[o];function r(a,l){return t(),n("div",null,s)}const i=e(c,[["render",r],["__file","index.html.vue"]]);export{i as default};
