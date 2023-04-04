@@ -1,6 +1,7 @@
 import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
 import { searchProPlugin } from "vuepress-plugin-search-pro";
+import { photoSwipePlugin } from "vuepress-plugin-photo-swipe";
 
 export default defineUserConfig({
   //站点设置
@@ -17,6 +18,7 @@ export default defineUserConfig({
   theme,
 
   plugins: [
+    // 全文搜索插件
     searchProPlugin({
       // 索引全部内容
       indexContent: true,

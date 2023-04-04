@@ -4,6 +4,7 @@ export const Sidebar = sidebar({
   "/mac/": "structure",
   "/git/": "structure",
   "/vuepress/": "structure",
+  "/JavaBase": "structure",
   "/JavaWeb/": "structure",
 });
 

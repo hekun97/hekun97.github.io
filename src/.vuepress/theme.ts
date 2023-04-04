@@ -14,9 +14,9 @@ export default hopeTheme({
   //站点logo
   logo: "/logo.png",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "hekun97/hekun97.github.io",
 
-  docsDir: "demo/theme-docs/src",
+  docsDir: "/src",
 
   //主题色选择器
   themeColor: {
