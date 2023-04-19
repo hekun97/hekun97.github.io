@@ -102,7 +102,9 @@ export default hopeTheme({
           },
         },
       ],
+      // 启用下角标功能
       sub: true,
+      // 启用上角标
       sup: true,
       tabs: true,
       vPre: true,
