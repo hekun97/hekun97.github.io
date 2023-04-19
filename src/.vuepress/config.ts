@@ -1,7 +1,9 @@
 import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
 import { searchProPlugin } from "vuepress-plugin-search-pro";
-import { photoSwipePlugin } from "vuepress-plugin-photo-swipe";
+//代码高亮
+import { shikiPlugin } from "@vuepress/plugin-shiki";
+import { blog } from "vuepress-theme-hope";
 
 export default defineUserConfig({
   //站点设置

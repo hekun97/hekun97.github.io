@@ -13,6 +13,11 @@ export const Navbar = navbar([
     link: "/JavaWeb/1.WEBServer-base/"
   },
   {
+    text: "Java框架",
+    icon: "java",
+    link: "/JavaFrame/2.SpringMVC/day01/"
+  },
+  {
     text: "Mac使用相关",
     icon: "mac",
     link: "/mac/",

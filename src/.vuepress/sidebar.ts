@@ -6,5 +6,6 @@ export const Sidebar = sidebar({
   "/vuepress/": "structure",
   "/JavaBase": "structure",
   "/JavaWeb/": "structure",
+  "/JavaFrame/": "structure",
 });
 
