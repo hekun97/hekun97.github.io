@@ -1231,7 +1231,7 @@ public class BookController {
 - 位置：基于SpringMVC的RESTful开发控制器类定义上方
 - 作用：设置当前控制器类为RESTful风格，等同于@Controller与@ResponseBody两个注解组合功能
 
-### 4案例：基于RESTful页面数据交互
+### 4 案例：基于RESTful页面数据交互
 
 #### 4.1 案例效果和环境准备
 
