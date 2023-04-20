@@ -1332,7 +1332,20 @@ public class BookController {
 
 ##### 4.2.2 设置对静态资源的访问放行
 
+第一步：将资料中资源中的静态资源加入到idea项目`./src/websapp`目录下，如下图：
+
+<img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/java/JavaBase/1.JavaBase/202304192358655.png" alt="CleanShot 2023-04-19 at 23.57.21@2x" style="zoom:50%;" />
+
+::: warning 注意
+
+这里运行项目后，我们直接访问路径`localhost/pages/books.html`会报404表示The requested resource is not available。看idea中控制台的报错信息为`[WARNING]No mapping for GET`；`[WARNING]No mapping for GET /pages/books.htm1`，这两个报错是因为前面我们在配置类`ServletContainersInitConfig`中设置了所有的请求（“/”）都走SpringMVC，但是在我们的SpringMVC中没有配置对应的`/pages/books.htm1`（controller），因此出现报错，我们可以新增一个配置类设置当访问`/pages/????`时候，从`/pages`目录下查找内容，其余的静态资源同理。
+
+:::
+
+第二步：新增配置类并添加给Spring管理
+
 ```java
+//新增配置类
 @Configuration
 public class SpringMvcSupport extends WebMvcConfigurationSupport {
     //设置静态资源访问过滤，当前类需要设置为配置类，并被扫描加载
@@ -1344,6 +1357,15 @@ public class SpringMvcSupport extends WebMvcConfigurationSupport {
         registry.addResourceHandler("/css/**").addResourceLocations("/css/");       
         registry.addResourceHandler("/plugins/**").addResourceLocations("/plugins/");
     }
+}
+```
+
+```java
+@Configuration
+//添加包"com.itheima.config"让Spring扫描后管理
+@ComponentScan({"com.itheima.controller","com.itheima.config"})
+@EnableWebMvc
+public class SpringMvcConfig {
 }
 ```
 
