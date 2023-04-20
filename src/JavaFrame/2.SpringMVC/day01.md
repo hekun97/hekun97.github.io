@@ -1342,7 +1342,7 @@ public class BookController {
 
 :::
 
-第二步：新增配置类并添加给Spring管理
+第二步：新增配置类并添加给SpringMVC配置类管理
 
 ```java
 //新增配置类
@@ -1362,7 +1362,7 @@ public class SpringMvcSupport extends WebMvcConfigurationSupport {
 
 ```java
 @Configuration
-//添加包"com.itheima.config"让Spring扫描后管理
+//添加包"com.itheima.config"让SpringMVC扫描后管理
 @ComponentScan({"com.itheima.controller","com.itheima.config"})
 @EnableWebMvc
 public class SpringMvcConfig {
@@ -1385,4 +1385,3 @@ getAll() {
     });
 },
 ```
-
