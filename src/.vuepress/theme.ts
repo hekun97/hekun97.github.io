@@ -1,4 +1,4 @@
-import { hopeTheme } from "vuepress-theme-hope";
+import { hopeTheme, sidebar } from "vuepress-theme-hope";
 import { Navbar } from "./navbar.js";
 import { Sidebar } from "./sidebar.js";
 
@@ -25,6 +25,11 @@ export default hopeTheme({
     green: "#3eaf7c",
     orange: "#fb9b5f",
   },
+
+  //设置页面标题深度
+  sidebarDepth: 6,
+  headerDepth: 4,
+  frontmatter: sidebar,
 
   locales: {
     /**
@@ -66,6 +71,7 @@ export default hopeTheme({
       align: true,
       attrs: true,
       chart: true,
+      // 代码块分组
       codetabs: true,
       //为你添加提示、注释、信息、注意、警告和详情自定义容器的支持。
       container: true,
@@ -106,6 +112,7 @@ export default hopeTheme({
       sub: true,
       // 启用上角标
       sup: true,
+      // 添加选项卡支持
       tabs: true,
       vPre: true,
       vuePlayground: true,

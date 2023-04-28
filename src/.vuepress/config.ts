@@ -18,6 +18,12 @@ export default defineUserConfig({
   },
   //主题设置
   theme,
+  // 解析 h4 标头
+  markdown: {
+    headers: {
+      level: [2, 3, 4, 5, 6]
+    }
+  },
 
   plugins: [
     // 全文搜索插件
