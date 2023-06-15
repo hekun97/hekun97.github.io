@@ -23,6 +23,11 @@ export const Navbar = navbar([
     link: "/mac/",
   },
   {
+    text: "软件测试",
+    icon: "ceshi",
+    link: "/SoftwareTest/",
+  },
+  {
     text: "git笔记",
     icon: "git",
     link: "/git/",

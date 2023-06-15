@@ -10,7 +10,7 @@ export default hopeTheme({
     url: "https://github.com/hekun97",
   },
   //图标地址
-  iconAssets: "//at.alicdn.com/t/c/font_3964306_8fx1p02f11x.css",
+  iconAssets: "//at.alicdn.com/t/c/font_3964306_w5i2bfb2cy.css",
   //站点logo
   logo: "/logo.png",
 
