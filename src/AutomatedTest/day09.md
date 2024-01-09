@@ -1,10 +1,18 @@
+---
+title: app自动化测试(appium)四和pytest测试框架一
+order: 9
+tag: 
+  - appAutomatedTest
+  - pytest
+---
+
 ## 1. toast
 
 ### 1.1. 什么是toast？
 
 toast可以在一个小型弹出式窗口中提供与操作有关的简单反馈。toast只会填充消息所需的空间大小，并且当前 activity 会一直显示并供用户与之互动，不影响当前的窗口，超时后，toast会自动消失。如下像当我们点击一下版本号弹出的这种消息就是toast消息。
 
-<img src="img/CleanShot 2024-01-04 at 16.11.59@2x.png" alt="CleanShot 2024-01-04 at 16.11.59@2x" style="zoom:50%;" />
+<img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052942.png" alt="CleanShot 2024-01-04 at 16.11.59@2x" style="zoom:50%;" />
 
 ### 1.2. 获取Toast内容
 
@@ -139,7 +147,7 @@ hk@hkdeMacBook-Pro 03代码 %
 
 根据之前学习的内容，使用Ul Automator Viewer工具不能对浏览器打开的页面中的webview元素进行定位，直接用之前学习的自动化代码也无法对webview进行操作。
 
-<img src="img/CleanShot 2024-01-04 at 17.28.28@2x.png" alt="CleanShot 2024-01-04 at 17.28.28@2x" style="zoom:50%;" />
+<img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052943.png" alt="CleanShot 2024-01-04 at 17.28.28@2x" style="zoom:50%;" />
 
 ### 2.1. 查看webview元素
 
@@ -160,11 +168,11 @@ Original error: unknown error: Chrome version must be >= 55.0.2883.0
 
 1. 需要查看手机或者模拟器上webView的版本；
 
-   <img src="img/CleanShot 2024-01-05 at 16.06.43@2x.png" alt="CleanShot 2024-01-05 at 16.06.43@2x" style="zoom:50%;" />
+   <img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052944.png" alt="CleanShot 2024-01-05 at 16.06.43@2x" style="zoom:50%;" />
 
 2. 下载对应的[chromedriver](https://cdn.npmmirror.com/)版本；  
 
-   <img src="img/CleanShot 2024-01-05 at 16.10.45@2x.png" alt="CleanShot 2024-01-05 at 16.10.45@2x" style="zoom:50%;" />
+   <img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052945.png" alt="CleanShot 2024-01-05 at 16.10.45@2x" style="zoom:50%;" />
 
    ::: warning 注意
 
@@ -172,7 +180,7 @@ Original error: unknown error: Chrome version must be >= 55.0.2883.0
 
    - 有的驱动版本不能明确看出是否和webView版本对应，可以查看notes.txt文件确定。
 
-     <img src="img/CleanShot 2024-01-05 at 16.16.16@2x.png" alt="CleanShot 2024-01-05 at 16.16.16@2x" style="zoom:50%;" />
+     <img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052946.png" alt="CleanShot 2024-01-05 at 16.16.16@2x" style="zoom:50%;" />
 
    :::
 
@@ -196,11 +204,11 @@ Original error: unknown error: Chrome version must be >= 55.0.2883.0
 
 2. 在PC的chrome浏览器当中，打开对应的地址： chrome://inspect/#devices，然后点击inspect查看；
 
-   <img src="img/CleanShot 2024-01-05 at 17.15.50@2x.png" alt="CleanShot 2024-01-05 at 17.15.50@2x" style="zoom:50%;" />
+   <img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052948.png" alt="CleanShot 2024-01-05 at 17.15.50@2x" style="zoom:50%;" />
 
 3. 通过devtools来查看对应的元素信息。
 
-   <img src="img/CleanShot 2024-01-05 at 17.16.58@2x.png" alt="CleanShot 2024-01-05 at 17.16.58@2x" style="zoom:50%;" />
+   <img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052949.png" alt="CleanShot 2024-01-05 at 17.16.58@2x" style="zoom:50%;" />
 
 ::: warning 注意
 
@@ -274,11 +282,11 @@ Original error: unknown error: Chrome version must be >= 55.0.2883.0
 
 1. 使用UI Automator Viewer工具获取浏览器的网址输入框；
 
-   <img src="img/CleanShot 2024-01-07 at 16.11.16@2x.png" alt="CleanShot 2024-01-07 at 16.11.16@2x" style="zoom:50%;" />
+   <img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052950.png" alt="CleanShot 2024-01-07 at 16.11.16@2x" style="zoom:50%;" />
 
 2. 使用chrome直连手机获取百度页面的输入框和搜索按钮的id。
 
-   <img src="img/CleanShot 2024-01-07 at 16.06.41@2x.png" alt="CleanShot 2024-01-07 at 16.06.41@2x" style="zoom:50%;" />
+   <img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052951.png" alt="CleanShot 2024-01-07 at 16.06.41@2x" style="zoom:50%;" />
 
 实现代码
 
@@ -433,13 +441,13 @@ if __name__ == '__main__':
 
 在pycharm中点击左侧运行按钮直接执行对应测试类、测试方法或者右击方法名、类名选择执行。
 
-<img src="img/CleanShot 2024-01-08 at 17.21.32@2x.png" alt="CleanShot 2024-01-08 at 17.21.32@2x" style="zoom:50%;" />
+<img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052952.png" alt="CleanShot 2024-01-08 at 17.21.32@2x" style="zoom:50%;" />
 
 ##### 3.4.1.3. 运行结果
 
-<img src="img/CleanShot 2024-01-08 at 16.20.26@2x.png" alt="方式一" style="zoom:50%;" />
+<img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052953.png" alt="方式一" style="zoom:50%;" />
 
-<img src="img/CleanShot 2024-01-08 at 16.22.53@2x.png" alt="方式二和三结果" style="zoom:50%;" />
+<img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052954.png" alt="方式二和三结果" style="zoom:50%;" />
 
 ::: warning 注意
 
@@ -450,7 +458,7 @@ if __name__ == '__main__':
 
 2. 如果执行不了，可能之前的默认运行测试的为unittest，需要在设置中改为pytest。
 
-   <img src="img/CleanShot 2024-01-09 at 14.45.35@2x.png" alt="CleanShot 2024-01-09 at 14.45.35@2x" style="zoom:50%;" />
+   <img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052955.png" alt="CleanShot 2024-01-09 at 14.45.35@2x" style="zoom:50%;" />
 
 
 
@@ -518,7 +526,7 @@ class TestAdd:
 
 ###### 3.4.3.1.2. 运行结果
 
-<img src="img/CleanShot 2024-01-09 at 14.21.17@2x.png" alt="CleanShot 2024-01-09 at 14.21.17@2x" style="zoom:50%;" />
+<img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052956.png" alt="CleanShot 2024-01-09 at 14.21.17@2x" style="zoom:50%;" />
 
 ::: waring 注意
 
@@ -562,7 +570,7 @@ class TestAdd:
 
 ###### 3.4.3.2.2. 运行结果
 
-<img src="img/CleanShot 2024-01-09 at 14.24.46@2x.png" alt="CleanShot 2024-01-09 at 14.24.46@2x" style="zoom:50%;" />
+<img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052957.png" alt="CleanShot 2024-01-09 at 14.24.46@2x" style="zoom:50%;" />
 
 
 
@@ -612,7 +620,7 @@ python_functions = test_*
 
 最后的运行结果和形成的目录结构如下图。
 
-<img src="img/CleanShot 2024-01-09 at 15.19.07@2x.png" alt="CleanShot 2024-01-09 at 15.19.07@2x" style="zoom:50%;" />
+<img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052958.png" alt="CleanShot 2024-01-09 at 15.19.07@2x" style="zoom:50%;" />
 
 ::: warning 注意
 
@@ -654,7 +662,7 @@ addopts = -s -v --html=report/report.html
 
 ##### 3.5.2.4. 运行结果
 
-<img src="img/CleanShot 2024-01-09 at 19.04.12@2x.png" alt="CleanShot 2024-01-09 at 19.04.12@2x" style="zoom:50%;" />
+<img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052960.png" alt="CleanShot 2024-01-09 at 19.04.12@2x" style="zoom:50%;" />
 
 ::: danger 危险
 
@@ -662,25 +670,125 @@ addopts = -s -v --html=report/report.html
 
   虽然已经使用命令行安装了pytest-test，但是执行时可能还是会遇到报错unrecognized arguments（无法识别的参数）。
 
-  <img src="img/CleanShot 2024-01-09 at 15.47.42@2x.png" alt="CleanShot 2024-01-09 at 15.47.42@2x" style="zoom:50%;" />
+  <img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052961.png" alt="CleanShot 2024-01-09 at 15.47.42@2x" style="zoom:50%;" />
 
 - 解决办法1：
 
   在pyChram软件的设置中重新自己安装一下purest。
 
-  <img src="img/CleanShot 2024-01-09 at 15.51.55@2x.png" alt="CleanShot 2024-01-09 at 15.51.55@2x" style="zoom:50%;" />
+  <img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052962.png" alt="CleanShot 2024-01-09 at 15.51.55@2x" style="zoom:50%;" />
 
-  <img src="img/CleanShot 2024-01-09 at 15.46.59@2x.png" alt="CleanShot 2024-01-09 at 15.46.59@2x" style="zoom:50%;" />
+  <img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052963.png" alt="CleanShot 2024-01-09 at 15.46.59@2x" style="zoom:50%;" />
 
 - 问题2：执行的时候不知道为什么一直报错：`TypeError: unsupported operand type(s) for =: foat' and 'str!`，但是报错代码全是内部模块代码报错，估计是依赖冲突之类的。
 
-  <img src="img/image-20240109184847582.png" alt="image-20240109184847582" style="zoom:50%;" />
+  <img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052964.png" alt="image-20240109184847582" style="zoom:50%;" />
 
 - 解决方法2：新建一个项目使用虚拟环境，然后项目模块中仅安装pytest和pytest-html模块，再试着重新运行后问题解决。
 
-  <img src="img/CleanShot 2024-01-09 at 18.49.16@2x.png" alt="CleanShot 2024-01-09 at 18.49.16@2x" style="zoom:50%;" />
+  <img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052965.png" alt="CleanShot 2024-01-09 at 18.49.16@2x" style="zoom:50%;" />
 
   :::
+
+#### 3.5.3. 控制用例执行顺序
+
+##### 3.5.3.1. 应用场景
+
+现实生活中，如果想下订单，必须先登录，我们可以通过pytest-ordering插件的形式来控制pytest测试方法执行的顺序。 
+
+::: tips 提示
+
+* unittest测试用例执行顺序是根据测试方法名称的assicc码值的大小来的，值越小排在前面(a-z)；
+
+* pytest 正常情况下是根据测试方法的从上到下的顺序来执行。
+
+:::
+
+##### 3.5.3.2. 安装
+
+使用命令`pip install pytest-ordering `进行安装 
+
+##### 3.5.3.3. 使用
+
+1.  标记于被测试函数，`@pytest.mark.run(order=x)`；
+2.  根据order传入的参数来解决运行顺序；
+3.  order值全为正数或全为负数时，运行顺序：值越小，优先级越高；
+4.  正数和负数同时存在：正数优先级高；
+5.  设置用例最后执行，`@pytest.mark.last`。
+
+##### 3.5.3.4. 示例
+
+```python
+# test_login.py
+# 类名必须是以Test开头
+import pytest
+
+
+class TestLogin:
+    # 测试方法一，方法名必须是以test开头
+    @pytest.mark.run(order=2)
+    def test_a(self):
+        print("------->test_a")
+
+    # 测试方法二
+    @pytest.mark.run(order=1)
+    def test_b(self):
+        print("------->test_b")
+
+    # 测试方法三
+    @pytest.mark.run(order=2)
+    def test_c(self):
+        print("------->test_c")
+```
+
+##### 3.5.3.5. 运行结果
+
+<img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092124020.png" alt="CleanShot 2024-01-09 at 21.11.59@2x" style="zoom:50%;" />
+
+#### 3.5.4. 失败重试
+
+##### 3.5.4.1. 应用场景
+
+自动化测试脚本可能会使用到网络，如果网络不好可能最终会使脚本不通过。像这种情况可能并不是脚本本身的问题，仅仅是因为网络忽快忽慢，那么我们可以使用失败重试的插件，当失败后尝试再次运行。一般情况最终成功可以视为成功，但最好进行进行排查时候是脚本问题。
+
+##### 3.5.4.2. 安装
+
+使用命令`pip install pytest-rerunfailures`进行安装。
+
+##### 3.5.4.3. 使用
+
+在配置文件pytest.ini中的命令行参数中增加 `--reruns n`。
+
+##### 3.5.4.4. 示例
+
+pytest.ini
+
+```
+addopts = -s --reruns 3
+```
+
+test_login.py
+
+```python
+import pytest
+
+class TestLogin:
+    # 测试方法一，方法名必须是以test开头
+    def test_a(self):
+        print("------->test_a")
+        # 断言成功
+        assert 1
+
+    # 测试方法二
+    def test_b(self):
+        print("------->test_b")
+        # 断言失败
+        assert 0
+```
+
+##### 3.5.4.5. 运行结果
+
+<img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092124022.png" alt="CleanShot 2024-01-09 at 21.20.08@2x" style="zoom:50%;" />
 
 ### 3.6. PyTest高级用法
 
@@ -697,6 +805,12 @@ addopts = -s -v --html=report/report.html
 
 同一个软件在不同的设备上可能会有不同的效果，比如，iOS 的 3d touch 操作是需要 6s 以上设备支持的，6 和 6s 都可以安装同一款应用，如果设备不支持，那么根本没有必要去测试这个功能。 此时，我们可以让这种函数进行跳过。
 
+::: tips 提示
+
+该方法可以在测试类和测试方法上使用。
+
+:::
+
 ##### 3.6.2.2. 方法名
 
 ```python
@@ -711,7 +825,7 @@ addopts = -s -v --html=report/report.html
 
 在需要跳过的测试脚本之上加上装饰器`@pytest.mark.skipif(condition, reason="xxx") `
 
-##### 3.6.2.4. 示例
+##### 3.6.2.4. 示例1
 
 ```python
 # test_login.py
@@ -733,9 +847,34 @@ class TestLogin:
         assert 0
 ```
 
-##### 3.6.2.5. 运行结果
+##### 3.6.2.5. 运行结果1
 
-<img src="img/CleanShot 2024-01-09 at 19.15.32@2x.png" alt="CleanShot 2024-01-09 at 19.15.32@2x" style="zoom:50%;" />
+<img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052966.png" alt="CleanShot 2024-01-09 at 19.15.32@2x" style="zoom:50%;" />
+
+##### 3.6.2.6. 示例2
+
+```python
+import pytest
+
+
+def add(x, y):
+    return x+y
+
+# 现在的版本
+version = 21
+
+class TestAdd:
+    def test_add_01(self):
+        result = add(1, 2)
+        assert 3 == result
+
+    @pytest.mark.skipif(version > 20, reason="大于2.0的版本不需要再执行此用例")
+    def test_add_02(self):
+        result = add(2, 2)
+        assert 4 == result
+```
+
+运行结果略。
 
 #### 3.6.3. 数据参数化
 
@@ -785,11 +924,11 @@ class TestLogin:
 
 ###### 3.6.3.3.2. 运行结果
 
-<img src="img/CleanShot 2024-01-09 at 19.36.36@2x.png" alt="CleanShot 2024-01-09 at 19.36.36@2x" style="zoom:50%;" />
+<img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052967.png" alt="CleanShot 2024-01-09 at 19.36.36@2x" style="zoom:50%;" />
 
 ##### 3.6.3.4. 多个参数使用方式
 
-###### 3.6.3.4.1. 示例
+###### 3.6.3.4.1. 示例1
 
 ```python
 # test_login.py
@@ -816,6 +955,25 @@ class TestLogin:
 
 :::
 
-###### 3.6.3.4.2. 运行结果
+###### 3.6.3.4.2. 运行结果1
 
-<img src="img/CleanShot 2024-01-09 at 19.40.41@2x.png" alt="CleanShot 2024-01-09 at 19.40.41@2x" style="zoom:50%;" />
+<img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052735.png" alt="CleanShot 2024-01-09 at 19.40.41@2x" style="zoom:50%;" />
+
+###### 3.6.3.4.3. 示例2
+
+```python
+import pytest
+
+def add(x, y):
+    return x+y
+
+class TestAdd:
+    @pytest.mark.parametrize("x,y,expect", [(1, 2, 3), (2, 2, 4), (3, 2, 5)])
+    def test_add_01(self, x, y, expect):
+        result = add(x, y)
+        assert expect == result
+```
+
+###### 3.6.3.4.4. 运行结果2
+
+<img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092129906.png" alt="image-20240109212946210" style="zoom:50%;" />
