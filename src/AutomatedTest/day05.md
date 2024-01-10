@@ -428,7 +428,7 @@ GT工具只能对特定类型的机型进行电量的测试。
 
    <img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401031525419.png" alt="CleanShot 2023-12-15 at 11.41.08@2x" style="zoom:50%;" />
 
-   :::: tips 提示
+   :::: tip 提示
 
    如果无法进行抓包，可能端口8888被占用，可以手动更改代理端，如：9999。
 

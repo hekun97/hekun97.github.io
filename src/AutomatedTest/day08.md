@@ -565,7 +565,7 @@ TouchAction(driver).press(el=None, x=None, y=None).perform()
 TouchAction(driver).release().perform()
 ```
 
-::: tips 提示
+::: tip 提示
 
 按下和抬起可以结合起来使用，达到点击的效果
 

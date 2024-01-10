@@ -158,7 +158,7 @@ An unknown server-side error occurred while processing the command.
 Original error: unknown error: Chrome version must be >= 55.0.2883.0
 ```
 
-::: tips 提示
+::: tip 提示
 
 可供参考的文章：[Using Chromedriver](https://www.kancloud.cn/testerhome/appium_docs_cn/2001863)
 
@@ -251,7 +251,7 @@ Original error: unknown error: Chrome version must be >= 55.0.2883.0
    driver.switch_to.context(driver.contexts[-1])
    ```
 
-   ::: tips 提示
+   ::: tip 提示
 
    这里可以理解为当前能操控的是当前打开的app（浏览器），也就是原生页面，但之前学习的方式都不能操控打开的网页（`www.baidu.com`），也就是webview页面，通过switchto切换后，就把操控切换到网页上了，也就可以对网页进行操控了。
 
@@ -376,7 +376,7 @@ driver.quit()
 7. pytest支持很多第三方插件；
 8. 方便的和持续集成工具集成。
 
-::: tips 提示
+::: tip 提示
 
 对pytest的更多学习参考：[Pytest文档](https://www.osgeo.cn/pytest/contents.html)
 
@@ -431,7 +431,7 @@ if __name__ == '__main__':
   pytest.main(["-s", "login.py"])
 ```
 
-::: tips 提示
+::: tip 提示
 
 -s 表示支持控制台打印，如果不加，print 不会出现任何内容。
 
@@ -528,7 +528,7 @@ class TestAdd:
 
 <img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401092052956.png" alt="CleanShot 2024-01-09 at 14.21.17@2x" style="zoom:50%;" />
 
-::: waring 注意
+::: warning 注意
 
 在最新的版本中setup()和teardown()方法以不受支持，继续使用会触发警告，因此需要替换setup()和teardown()方法：将setup()方法更名为setup_method()，将teardown()方法更名为teardown_method()。这些是pytest推荐使用的方法名，以替代nose方法。
 
@@ -696,7 +696,7 @@ addopts = -s -v --html=report/report.html
 
 现实生活中，如果想下订单，必须先登录，我们可以通过pytest-ordering插件的形式来控制pytest测试方法执行的顺序。 
 
-::: tips 提示
+::: tip 提示
 
 * unittest测试用例执行顺序是根据测试方法名称的assicc码值的大小来的，值越小排在前面(a-z)；
 
@@ -805,7 +805,7 @@ class TestLogin:
 
 同一个软件在不同的设备上可能会有不同的效果，比如，iOS 的 3d touch 操作是需要 6s 以上设备支持的，6 和 6s 都可以安装同一款应用，如果设备不支持，那么根本没有必要去测试这个功能。 此时，我们可以让这种函数进行跳过。
 
-::: tips 提示
+::: tip 提示
 
 该方法可以在测试类和测试方法上使用。
 
@@ -900,7 +900,7 @@ class TestAdd:
 3.  在测试脚本中，参数中的名字与  argnames 保持一致，类似：`def test_a(self, name)`；
 4.  在测试脚本中正常使用，类似：`print("name")`。
 
-::: tips 提示
+::: tip 提示
 
 argvalues 列表有多少个内容，这个脚本就会运行几次
 
@@ -945,7 +945,7 @@ class TestLogin:
         assert 1
 ```
 
-::: tips 提示
+::: tip 提示
 
 多个参数还可以将装饰器写成如下形式，效果是一样的。
 
