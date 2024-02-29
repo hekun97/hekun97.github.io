@@ -23,14 +23,19 @@ export const Navbar = navbar([
     link: "/mac/",
   },
   {
-    text: "软件测试",
+    text: "功能测试",
     icon: "ceshi",
-    link: "/SoftwareTest/",
+    link: "/SoftwareTest/FunctionTest/",
+  },
+  {
+    text: "性能测试",
+    icon: "ceshi",
+    link: "/SoftwareTest/PerformanceTest/",
   },
   {
     text: "自动化测试",
     icon: "ceshi",
-    link: "/AutomatedTest/",
+    link: "/SoftwareTest/AutomatedTest/",
   },
   {
     text: "git笔记",

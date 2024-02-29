@@ -288,12 +288,12 @@ def swipe_find(driver, scroll_element, find_btn):
         page = driver.page_source  # 记录查找前的页面资源,通过对比页面资源来退出死循环
         try:
             # 使用工具类方法get_element去查找元素
+            time.sleep(1)
             get_element(driver, find_btn).click()  # 如果有找到对应的元素那么点击并返回
             return True
         except Exception as e:
             print("没有找到该元素！")
         driver.swipe(start_x, y, end_x, y, duration=1000)  # 没有找到元素，那么像左滑屏后再对比并重新查找
-        time.sleep(1)
         # 这里不知道原理，但是前面没查找到元素时，或者查找到元素时，对比页面资源的值都是False，只有最后滑屏到最右边后，如果没找到被查找元素，对比页面资源为结果为True
         if page == driver.page_source:
             print("滑屏操作完成且没有找到元素信息")
