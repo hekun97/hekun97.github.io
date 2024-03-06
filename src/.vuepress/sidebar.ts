@@ -8,6 +8,7 @@ export const Sidebar = sidebar({
   "/JavaWeb/": "structure",
   "/JavaFrame/": "structure",
   "/SoftwareTest/FunctionTest/": "structure",
+  "/SoftwareTest/InterfaceTest/":"structure",
   "/SoftwareTest/PerformanceTest/":"structure",
   "/SoftwareTest/AutomatedTest/":"structure"
 });

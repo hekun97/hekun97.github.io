@@ -28,6 +28,11 @@ export const Navbar = navbar([
     link: "/SoftwareTest/FunctionTest/",
   },
   {
+    text: "接口测试",
+    icon: "ceshi",
+    link: "/SoftwareTest/InterfaceTest/",
+  },
+  {
     text: "性能测试",
     icon: "ceshi",
     link: "/SoftwareTest/PerformanceTest/",
