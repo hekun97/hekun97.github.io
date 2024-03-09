@@ -11,6 +11,6 @@ export const Sidebar = sidebar({
   "/SoftwareTest/InterfaceTest/":"structure",
   "/SoftwareTest/PerformanceTest/":"structure",
   "/SoftwareTest/AutomatedTest/":"structure",
-  "/Expansion/SQL":"structure"
+  "/Expansion/SQL/":"structure"
 });
 
