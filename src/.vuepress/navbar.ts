@@ -44,6 +44,7 @@ export const Navbar = navbar([
   },
   {
     text: "SQL语句汇总",
+    icon: "ceshi",
     link: "/Expansion/SQL/",
   },
   {
