@@ -43,6 +43,10 @@ export const Navbar = navbar([
     link: "/SoftwareTest/AutomatedTest/",
   },
   {
+    text: "SQL语句汇总",
+    link: "/Expansion/SQL",
+  },
+  {
     text: "git笔记",
     icon: "git",
     link: "/git/",

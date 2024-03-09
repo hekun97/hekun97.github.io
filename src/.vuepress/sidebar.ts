@@ -10,6 +10,7 @@ export const Sidebar = sidebar({
   "/SoftwareTest/FunctionTest/": "structure",
   "/SoftwareTest/InterfaceTest/":"structure",
   "/SoftwareTest/PerformanceTest/":"structure",
-  "/SoftwareTest/AutomatedTest/":"structure"
+  "/SoftwareTest/AutomatedTest/":"structure",
+  "/Expansion/SQL":"structure"
 });
 
