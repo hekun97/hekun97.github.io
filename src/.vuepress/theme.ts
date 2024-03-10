@@ -78,7 +78,7 @@ export default hopeTheme({
       demo: true,
       echarts: true,
       //为图像添加描述
-      figure: true,
+      figure: false,
       flowchart: true,
       gfm: true,
       //启用图片懒加载
