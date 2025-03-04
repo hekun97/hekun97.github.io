@@ -49,4 +49,10 @@ export default navbar([
     icon: "book",
     link: "https://theme-hope.vuejs.press/zh/",
   },
+  {
+    text: "UI自动化框架",
+    icon: "UI",
+    link: "/posts/ui_automation/"
+  },
+
 ]);
