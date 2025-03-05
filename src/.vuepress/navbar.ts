@@ -52,7 +52,7 @@ export default navbar([
   {
     text: "UI自动化框架",
     icon: "UI",
-    link: "/posts/ui_automation/"
+    link: "/auto/ui/"
   },
 
 ]);
