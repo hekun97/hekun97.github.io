@@ -1,5 +1,5 @@
 ---
-xicon: pen-to-square
+icon: pen-to-square
 category:
   - UI自动化测试
 tag:

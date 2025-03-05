@@ -24,9 +24,16 @@ export default sidebar({
     },
   ],
   "/auto/":[{
-    text: "UI自动化",
+    text: "UI自动化测试",
     icon: "book",
     prefix: "ui/",
     children: "structure",
-  },]
+  },
+  {
+    text: "API自动化测试",
+    icon: "book",
+    prefix: "api/",
+    children: "structure",
+  },
+]
 });

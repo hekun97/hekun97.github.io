@@ -50,7 +50,7 @@ export default navbar([
     link: "https://theme-hope.vuejs.press/zh/",
   },
   {
-    text: "UI自动化框架",
+    text: "自动化测试",
     icon: "UI",
     link: "/auto/ui/"
   },
