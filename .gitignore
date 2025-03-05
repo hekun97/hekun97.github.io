@@ -3,5 +3,5 @@ node_modules/
 src/.vuepress/.cache/
 src/.vuepress/.temp/
 
-**/.DS_Store       # 递归忽略所有子目录
-.DS_Store         # 忽略根目录（可选冗余配置）
+**/.DS_Store
+.DS_Store
