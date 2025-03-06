@@ -52,7 +52,7 @@ export default navbar([
   {
     text: "自动化测试",
     icon: "UI",
-    link: "/auto/ui/"
+    link: "/auto/"
   },
 
 ]);
