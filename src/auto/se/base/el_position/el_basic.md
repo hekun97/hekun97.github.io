@@ -5,13 +5,13 @@ category:
 tag:
   - selenium
   - 元素定位
-order: 3
+order: 1
 sticky: true
 ---
 
 # 元素定位
 
-## 3.1 如何进行元素定位？
+## 一、元素介绍
 
 ### 什么是元素
 
@@ -32,9 +32,11 @@ sticky: true
 
 ### 如何进行元素定位
 
-通过元素的信息或者元素的层级结构来进行元素定位。
+通过元素的信息或者元素的层级结构来进行元素定位。参考后续文章 元素定位。
 
-## 3.2 浏览器开发者工具介绍
+## 如何查找元素
+
+### 浏览器开发者工具
 
 * 浏览器开发者工具主要用来查看元素的信息, 同时也可以查看接口的相关信息。
 
@@ -52,6 +54,12 @@ sticky: true
   * 自动定位到该元素。
   
   <img src="https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/AutomatedTest/202401031519940.png" alt="image-20231121102022212" style="zoom:50%;" />
+
+### 插件SelectorsHub
+
+
+
+
 
 ## 3.3 元素定位
 
@@ -444,7 +452,7 @@ driver = webdriver.Chrome()
 driver.maximize_window()
 
 # 打开测试网站
-driver.get("file:///Users/hk/Documents/%E9%BB%91%E9%A9%AC2022%E5%B9%B4%E6%B5%8B%E8%AF%95/%E9%85%8D%E5%A5%97%E8%B5%84%E6%96%99/09%E3%80%81UI%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%8F%8A%E9%BB%91%E9%A9%AC%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/UI%E8%87%AA%E5%8A%A8%E5%8C%96/web%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/pagetest/%E6%B3%A8%E5%86%8CA.html")
+driver.get("www.test.com")
 
 time.sleep(3)
 # 2.设置窗口大小
@@ -548,7 +556,7 @@ driver = webdriver.Chrome()
 driver.maximize_window()
 
 # 打开测试网站
-driver.get("file:///Users/hk/Documents/%E9%BB%91%E9%A9%AC2022%E5%B9%B4%E6%B5%8B%E8%AF%95/%E9%85%8D%E5%A5%97%E8%B5%84%E6%96%99/09%E3%80%81UI%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%8F%8A%E9%BB%91%E9%A9%AC%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/UI%E8%87%AA%E5%8A%A8%E5%8C%96/web%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/pagetest/%E6%B3%A8%E5%86%8CA.html")
+driver.get("www.test.com")
 
 # 2.获取页面标题
 print(driver.title)
@@ -616,7 +624,7 @@ from selenium.webdriver.common.by import By
 driver = webdriver.Chrome()
 driver.maximize_window()
 # 打开测试网站
-driver.get("file:///Users/hk/Documents/%E9%BB%91%E9%A9%AC2022%E5%B9%B4%E6%B5%8B%E8%AF%95/%E9%85%8D%E5%A5%97%E8%B5%84%E6%96%99/09%E3%80%81UI%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%8F%8A%E9%BB%91%E9%A9%AC%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/UI%E8%87%AA%E5%8A%A8%E5%8C%96/web%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/pagetest/%E6%B3%A8%E5%86%8CA.html")
+driver.get("www.test.com")
 
 # 1).获取用户名输入框的大小
 print(driver.find_element(By.ID, "userA").size)

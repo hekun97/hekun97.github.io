@@ -50,9 +50,9 @@ export default navbar([
     link: "https://theme-hope.vuejs.press/zh/",
   },
   {
-    text: "自动化测试",
+    text: "Selenium",
     icon: "UI",
-    link: "/auto/"
+    link: "/auto/se/"
   },
 
 ]);

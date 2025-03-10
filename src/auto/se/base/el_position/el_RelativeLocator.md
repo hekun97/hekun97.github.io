@@ -6,7 +6,7 @@ tag:
   - selenium
   - 元素定位
   - xpath
-order: 6
+order: 4
 sticky: true
 ---
 
