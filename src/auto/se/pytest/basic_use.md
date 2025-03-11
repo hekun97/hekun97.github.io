@@ -1,8 +1,22 @@
-以下是 **pytest 测试框架** 的核心使用指南，涵盖基础用法、断言方法、Fixture（setup/teardown）机制和常用插件：
-
+---
+icon: pen-to-square
+category:
+  - UI自动化测试
+  - selenium
+tag:
+  - selenium
+  - 元素定位
+  - pytest
+  - base
+order: 1
+sticky: true
 ---
 
 # pytest基础和断言
+
+以下是 **pytest 测试框架** 的核心使用指南，涵盖基础用法、断言方法、Fixture（setup/teardown）机制和常用插件：
+
+---
 
 ### **一、pytest 基础使用**
 
@@ -118,47 +132,6 @@ assert 0.1 + 0.2 == pytest.approx(0.3)
 ```python
 assert {"a": 1, "b": 2} == {"b": 2, "a": 1}  # 字典无序比较通过
 assert [1, 2] != [2, 1]                      # 列表有序比较
-```
-
----
-
-### **三、Fixture**
-Fixture 替代传统的 `setup/teardown`，提供更灵活的依赖管理。
-
-#### **1. 定义 Fixture**
-```python
-import pytest
-
-@pytest.fixture
-def database_connection():
-    # Setup：创建数据库连接
-    conn = create_db_connection()
-    yield conn  # 测试用例执行阶段
-    # Teardown：关闭连接
-    conn.close()
-```
-
-#### **2. 使用 Fixture**
-```python
-def test_query(database_connection):
-    result = database_connection.execute("SELECT 1")
-    assert result == 1
-```
-
-#### **3. Fixture 作用域**
-通过 `scope` 参数控制生命周期：
-```python
-@pytest.fixture(scope="module")  # 可选：function（默认）, class, module, session
-def shared_resource():
-    return Resource()
-```
-
-#### **4. 自动使用 Fixture**
-无需显式调用，自动执行：
-```python
-@pytest.fixture(autouse=True)
-def setup_logging():
-    logging.config.dictConfig(...)
 ```
 
 ---

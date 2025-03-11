@@ -1,3 +1,17 @@
+---
+icon: pen-to-square
+category:
+  - UI自动化测试
+  - selenium
+tag:
+  - selenium
+  - 元素定位
+  - pytest
+  - fixture
+order: 2
+sticky: true
+---
+
 # Fixture
 
 ### **一、Fixture 基础**
@@ -143,9 +157,11 @@ def setup_logging():
     logging.basicConfig(level=logging.DEBUG)
 ```
 
-::: tip 提示
+::: warning
 
-当设置`autouse=True`时，在一个session内的所有的用例（`test`）都会自动调用这个Fixture。权限大，责任也大，确保只在必要作用域内使用，应谨慎标记 `autouse=True`。
+- 当`autouse=True`时，在一个session内的所有的用例（`test`）都会自动调用这个Fixture。权限大，责任也大，确保只在必要作用域内使用，应谨慎单独标记为 `autouse=True`。
+
+- `autouse=True` + `scope="function"` 是安全的组合，适用于需要**每个测试函数独立初始化/清理**的场景。
 
 :::
 
@@ -207,7 +223,8 @@ def temp_file(request):
     file = tempfile.NamedTemporaryFile()
     def cleanup():  # Teardown 清理函数（cleanup）
         file.close()
-    request.addfinalizer(cleanup)  # 可传多个函数名，支持多个清理函数
+    request.addfinalizer(cleanup)  # 支持多个清理函数
+    request.addfinalizer(cleanup_1)  # 支持多个清理函数
     return file.name  # 返回测试用例需使用的资源（file.name）
 ```
 
@@ -219,9 +236,11 @@ def temp_file(request):
 | 多清理函数支持 |   只能有一个 teardown 块   | 可注册多个清理函数 |
 |    异常处理    |          自动处理          |   需手动处理异常   |
 
-::: warning 注意
+::: warning
 
 如果fixture作用域为函数（`function`），且当前函数被标记跳过（`@pytest.mark.skip`）时，不会触发该测试的 Fixture 依赖链。不过即使 Fixture 未被触发，也要使用防御性清理（`try...finally`）确保代码能处理资源未初始化的情况。
+
+ `request.addfinalizer()`在另一篇文章中提及。
 
 :::
 
