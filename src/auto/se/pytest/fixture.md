@@ -255,6 +255,12 @@ def temp_file(request):
 
    当多个测试进程/线程必须访问同一资源（如文件、数据库）时，应避免共享资源被多个进程/线程同时访问和修改。
 
+::: info 
+
+具体可参考[避免 Fixture 副作用](../sundry/fixture_side_effects.md)。
+
+:::
+
 ---
 
 ### **七、最佳实践**
