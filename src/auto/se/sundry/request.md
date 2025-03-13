@@ -1,4 +1,4 @@
-# Pytest内置fixture-request
+# request
 
 在 Selenium 中结合 pytest 使用 **`Fixture`** 时，`request` 是一个非常重要的内置 Fixture 参数。它允许你在 Fixture 中访问当前测试用例的上下文信息（如参数、测试函数名称、模块等），从而实现动态控制 Fixture 的行为。以下是 `request` 的详细解析和典型用法：
 

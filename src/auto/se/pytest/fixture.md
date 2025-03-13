@@ -240,7 +240,7 @@ def temp_file(request):
 
 如果fixture作用域为函数（`function`），且当前函数被标记跳过（`@pytest.mark.skip`）时，不会触发该测试的 Fixture 依赖链。不过即使 Fixture 未被触发，也要使用防御性清理（`try...finally`）确保代码能处理资源未初始化的情况。
 
- `request.addfinalizer()`在另一篇文章中提及。
+ `request.addfinalizer()`的具体内容具体请参考：[request](../sundry/request.md)。
 
 :::
 
