@@ -5,8 +5,8 @@ category:
 tag:
   - selenium
   - 元素定位
-  - xpath
-order: 4
+  - RelativeLocator
+order: 3
 sticky: true
 ---
 
