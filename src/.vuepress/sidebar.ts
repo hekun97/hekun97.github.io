@@ -23,19 +23,6 @@ export default sidebar({
       link: "https://ecosystem.vuejs.press/zh/plugins/markdown/revealjs/demo.html",
     },
   ],
-  "/auto/":[
-    {
-      text: "UI自动化测试",
-      prefix: "se/",
-      icon: "book",
-      children: [
-        "intro/",
-        "base/",
-        "advanced/",
-        "pytest/",
-        "Project_practical/",
-      ],
-    },
-  ],
   "/auto/se/": "structure",
+  "/jmeter":"structure"
 });

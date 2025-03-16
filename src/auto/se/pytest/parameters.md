@@ -1,4 +1,4 @@
-# pytest参数化
+# 参数化
 
 以下是关于 **pytest 参数化（`@pytest.mark.parametrize`）** 的详细指南，涵盖基础语法、高级用法及实战技巧：
 

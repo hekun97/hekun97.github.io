@@ -84,6 +84,12 @@ element = driver.find_element(By.CSS_SELECTOR, "div.container > ul#user-list li.
 element = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1)")
 ```
 
+::: tip
+
+伪类选择的详细内容请参考：[伪类选择器](../../sundry/CSS_Selector_pseudo.md)
+
+:::
+
 ---
 
 ### 3. 高级技巧

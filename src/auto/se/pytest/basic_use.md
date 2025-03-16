@@ -12,7 +12,7 @@ order: 1
 sticky: true
 ---
 
-# pytest基础和断言
+# 基础和断言
 
 以下是 **pytest 测试框架** 的核心使用指南，涵盖基础用法、断言方法、Fixture（setup/teardown）机制和常用插件：
 
