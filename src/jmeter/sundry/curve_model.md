@@ -2,15 +2,15 @@
 
 性能测试曲线模型是一条随着测试时间不断变化的曲线，与**服务器资源**、**用户数**或其他的性能指标密切相关的曲线。如下图所示。
 
-![performance curve](https://hk-docs.oss-cn-chengdu.aliyuncs.com/SoftwareTest/InterfaceTest/202401251757064.png)
+![performance curve](/assets/jmeter/202401251757064.png)
 
 ## 曲线图关键点
 
 - **横轴**：从左到右表现了Number of Concurrent Users（并发用户数）的不断增长。
 - **曲线**：
-  - <font color=green>**Utilization(U)**</font>：资源的利用情况，包括硬件资源和软件资源；
-  - <font color=Purple>**Throughput(X)**</font>：吞吐量，这里是指每秒事务数（TPS）；
-  - <font color=blue>**Response Time(R)**</font>：响应时间。
+  - **<font color=green>Utilization(U)</font>**：资源的利用情况，包括硬件资源和软件资源；
+  - **<font color=Purple>Throughput(X)</font>**：吞吐量，这里是指每秒事务数（TPS）；
+  - **<font color=blue>Response Time(R)</font>**：响应时间。
 - **区域**：
   - **Light Load** ：轻负载区
   - **Heavy Load** ：重负载区
