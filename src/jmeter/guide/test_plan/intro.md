@@ -1,13 +1,12 @@
 ---
 icon: pen-to-square
 category:
-  - JMter
+  - JMeter
 tag:
   - 测试计划
   - 概述
 order: 1
 sticky: true
-
 ---
 
 # 测试计划概述
