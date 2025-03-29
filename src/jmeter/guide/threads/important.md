@@ -1,4 +1,17 @@
-# Jmeter系列（16）- 线程组中的一些重点事项 
+---
+icon: pen-to-square
+category:
+  - JMeter
+tag:
+  - Threads
+  - Important
+order: 2
+sticky: true
+---
+
+
+
+# 线程组中的一些重点事项 
 
 ## 重点一
 

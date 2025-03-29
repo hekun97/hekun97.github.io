@@ -1,13 +1,13 @@
 ---
-title: 基础
+title: BeanShell
 icon: splotch
 index: false
 dir:
-  order: 2
+  order: 44
 category:
   - 性能测试
 tag:
-  - 基础
+  - BeanShell
 ---
 
 <Catalog />

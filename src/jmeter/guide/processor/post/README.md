@@ -1,13 +1,14 @@
 ---
-title: 基础
+title: 后置处理器
 icon: splotch
 index: false
 dir:
-  order: 2
+  order: 3
 category:
-  - 性能测试
+  - JMeter
 tag:
-  - 基础
+  - processor
+  - post
 ---
 
 <Catalog />

@@ -3,7 +3,7 @@ title: 指南
 icon: splotch
 index: false
 dir:
-  order: 1
+  order: 33
 category:
   - JMeter
 tag:

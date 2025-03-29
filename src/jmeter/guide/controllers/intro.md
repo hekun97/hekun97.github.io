@@ -9,7 +9,7 @@ order: 1
 sticky: true
 ---
 
-# 控制器Controllers 的入门介绍
+# 入门介绍
 
 ## Controllers 简介
 

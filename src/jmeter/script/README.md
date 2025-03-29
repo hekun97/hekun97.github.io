@@ -1,13 +1,13 @@
 ---
-title: 基础
+title: 脚本
 icon: splotch
 index: false
 dir:
-  order: 2
+  order: 44
 category:
   - 性能测试
 tag:
-  - 基础
+  - script
 ---
 
 <Catalog />
