@@ -10,7 +10,7 @@ order: 3
 sticky: true
 ---
 
-# 详解 JSON 提取器
+# JSON 提取器
 
 ## 为什么要用 JSON 提取器
 

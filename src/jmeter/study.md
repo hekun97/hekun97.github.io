@@ -9,19 +9,19 @@ order: 1
 sticky: true
 ---
 
-# 路线
+# 学习路线
 
 学习 JMeter 进行性能测试的路线可以分阶段规划，以下是系统化的学习路径建议：
 
 ---
 
-## **阶段 1：基础入门**
+## **阶段一：基础入门**
 
 1. **理解性能测试基础**
    - 性能测试类型：负载测试、压力测试、并发测试、稳定性测试等。
    - 核心指标：响应时间、并发数、吞吐量（TPS、QPS）、错误率、点击数、资源利用率（CPU/内存/网络）等。
    - 常见性能问题：内存泄漏、线程阻塞、数据库锁等。
-2. **JMeter概述**
+2. **JMeter入门介绍**
    - JMeter支持哪些测试场景？
    - JMeter有哪些特征？
    - JMetert的扩展性体现在哪里？
@@ -41,27 +41,60 @@ sticky: true
 
 ---
 
-## **阶段 2：核心功能学习**
-1. **JMeter 核心元件**
-   - **逻辑控制器**：If Controller、Loop Controller、Transaction Controller。
-   - **配置元件**：HTTP Request Defaults、CSV Data Set Config（参数化）。
-   - **前置/后置处理器**：Regular Expression Extractor（关联参数）、JDBC PostProcessor。
-   - **断言**：响应断言、持续时间断言。
-   - **定时器**：Constant Timer、Gaussian Random Timer（模拟用户等待）。
+## 阶段二：核心功能学习
 
-2. **参数化与动态数据**
+1. **JMeter 核心元件**
+   
+   |      **类别**       |         **元件名称**         | **优先级** |                  **用途说明**                  |
+   | :-----------------: | :--------------------------: | :--------: | :--------------------------------------------: |
+   |     **线程组**      |         Thread Group         |     ⭐️      |      设置并发用户数、启动时间、循环次数。      |
+   |                     |    Ultimate Thread Group     |     ⭐️      |          阶梯/波浪式加压（需插件）。           |
+   |     **取样器**      |         HTTP Request         |     ⭐️      |     发送 HTTP/HTTPS 请求，支持 GET/POST。      |
+   |                     |         JDBC Request         |     ⭐️      |        执行 SQL 语句，压测数据库性能。         |
+   |     **监听器**      |       Aggregate Report       |     ⭐️      |    汇总关键指标（TPS、响应时间、错误率）。     |
+   |                     |      View Results Tree       |     ⚠️      |        查看请求详情（正式压测需禁用）。        |
+   |    **配置元件**     |     CSV Data Set Config      |     ⭐️      |        参数化测试数据（如多用户登录）。        |
+   |                     |    HTTP Request Defaults     |     ⭐️      |  统一配置 HTTP 请求的公共参数（域名、端口）。  |
+   |                     |     HTTP Cookie Manager      |     ⭐️      |        自动管理 Cookies，模拟用户会话。        |
+   |   **逻辑控制器**    |       Loop Controller        |     ⭐️      |       循环执行子元件（如重复提交订单）。       |
+   |                     |        If Controller         |     ✅      |     根据条件控制请求执行（如响应码=200）。     |
+   | **前置/后置处理器** | Regular Expression Extractor |     ⭐️      |         正则提取响应数据（如 Token）。         |
+   |                     |        JSON Extractor        |     ⭐️      |        提取 JSON 字段（比正则更高效）。        |
+   |                     |     JSR223 PreProcessor      |     ✅      | 用 Groovy 脚本生成动态参数（如时间戳、签名）。 |
+   |      **断言**       |      Response Assertion      |     ⭐️      |       验证响应内容、状态码是否匹配预期。       |
+   |                     |      Duration Assertion      |     ⭐️      |          检查请求响应时间是否超阈值。          |
+   |     **定时器**      |        Constant Timer        |     ⭐️      |    固定间隔等待（如每次请求后等待 1 秒）。     |
+   |                     |     Synchronizing Timer      |     ✅      |       实现多用户并发触发（如秒杀场景）。       |
+   
+   ::: tip
+   
+   1. **优先级说明**：
+      - ⭐️ 必学：基础测试场景必备元件。
+      - ✅ 进阶：复杂场景扩展功能，建议掌握基础后学习。
+      - ⚠️ 调试用：正式压测时需禁用（避免内存问题）。
+   2. **学习顺序建议**：
+      - 先掌握 **必学元件**（线程组、HTTP 请求、CSV 参数化、断言）。
+      - 再学习 **进阶元件**（JSON 提取器、逻辑控制器、定时器）。
+   3. **效率提升技巧**：
+      - 使用 **HTTP Request Defaults** 减少重复配置。
+      - 优先选择 **JSON Extractor** 替代正则表达式（效率更高）。
+      - 正式压测时用命令行模式：`jmeter -n -t test.jmx -l result.jtl`。
+   
+   :::
+
+1. **参数化与动态数据**
    - 使用 CSV 文件实现参数化（如多用户登录）。
    - 通过函数助手（__Random、__time）生成动态数据。
    - 利用变量和属性（Properties）跨线程组传递数据。
 
-3. **监听器与结果分析**
+2. **监听器与结果分析**
    - 常用监听器：Aggregate Report、Response Time Graph、HTML Dashboard。
    - 生成 HTML 报告：`jmeter -n -t test.jmx -l result.jtl -e -o report/`。
-   - 分析关键指标：平均响应时间、90% Line、错误率。
+   - 分析关键指标：平均响应时间、99% Line、错误率。
 
 ---
 
-## **阶段 3：脚本开发与调试**
+## **阶段三：脚本开发与调试**
 1. **复杂场景设计**
    - 混合场景：模拟登录、浏览、下单等组合操作。
    - 分布式测试：使用多台机器作为 JMeter 压力机（Master-Slave 模式）。
@@ -78,7 +111,7 @@ sticky: true
 
 ---
 
-## **阶段 4：高级应用**
+## **阶段四：高级应用**
 1. **分布式测试与云压测**
     - 配置多台 JMeter Slave 机器，通过 Master 控制。
     - 使用云服务（如 AWS、BlazeMeter）进行大规模压测。
@@ -94,7 +127,7 @@ sticky: true
 
 ---
 
-## **阶段 5：实战与优化**
+## **阶段五：实战与优化**
 1. **典型场景实战**
    - **Web 应用压测**：处理 Cookies、Session、动态资源（CSS/JS）。
    - **API 压测**：RESTful API、GraphQL、WebSocket。
@@ -129,8 +162,6 @@ sticky: true
 
 ---
 
+## 总结
+
 通过以上路线逐步实践，配合项目实战（如电商秒杀、API 高并发场景），可以系统掌握 JMeter 性能测试的核心能力。
-
-## 目录
-
-<Catalog />

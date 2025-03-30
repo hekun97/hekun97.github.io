@@ -11,7 +11,7 @@ sticky: true
 
 
 
-# 详解 HTTP Cookie 管理器
+# HTTP Cookie管理器
 
 ## 简单介绍
 

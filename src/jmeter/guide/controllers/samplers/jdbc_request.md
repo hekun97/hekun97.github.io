@@ -6,13 +6,13 @@ tag:
   - samplers
   - JDBC
   - request
-order: 1
+order: 3
 sticky: true
 ---
 
 
 
-# 详解 JDBC Request
+# JDBC Request
 
 ## 前言
 

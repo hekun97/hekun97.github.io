@@ -9,9 +9,7 @@ order: 3
 sticky: true
 ---
 
-
-
-# 详解 JSON 断言
+# JSON 断言
 
 ## 简单介绍
 

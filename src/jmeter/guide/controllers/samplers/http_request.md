@@ -6,11 +6,11 @@ tag:
   - request
   - samplers
   - hhtp
-order: 1
+order: 2
 sticky: true
 ---
 
-# 详解 HTTP Request
+# HTTP Request
 
 ## HTTP Request 介绍
 

@@ -3,14 +3,13 @@ icon: pen-to-square
 category:
   - JMeter
 tag:
-  - request
-  - samplers
-  - detail
-order: 2
+  - Request
+  - Config
+order: 6
 sticky: true
 ---
 
-# 详解 HTTP Request默认值
+# HTTP请求默认值
 
 ## HTTP 请求默认值界面介绍
 

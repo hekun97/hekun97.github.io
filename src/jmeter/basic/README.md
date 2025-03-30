@@ -1,5 +1,5 @@
 ---
-title: 基础
+title: 基础入门
 icon: splotch
 index: false
 dir:

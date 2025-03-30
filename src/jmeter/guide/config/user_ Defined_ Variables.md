@@ -4,12 +4,12 @@ category:
   - JMeter
 tag:
   - config
-  - detail
+  - Defined
 order: 17
 sticky: true
 ---
 
-# 详解用户自定义变量
+# 用户自定义变量
 
 ## 用户自定义变量
 
