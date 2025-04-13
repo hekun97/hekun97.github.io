@@ -54,5 +54,9 @@ export default navbar([
     icon: "UI",
     link: "/auto/se/"
   },
-
+  {
+    text: "SQL",
+    icon: "UI",
+    link: "/sql/"
+  },
 ]);
